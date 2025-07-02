@@ -6,52 +6,84 @@ import { motion } from "framer-motion"
 const CoreTeamPage = () => {
   const teamMembers = [
     {
-      name: "Sarah Johnson",
-      position: "Editor-in-Chief",
-      bio: "Award-winning journalist with over 15 years of experience in international news coverage.",
-      image: "https://via.placeholder.com/180", // Slightly increased image size
-      skills: ["Leadership", "International Affairs", "Editorial Strategy"],
-      twitter: "https://x.com/sarahjohnson",
+      name: "Just Hemmy",
+      position: "Founder",
+      bio: "I’m hemmy, motion-graphics animator, poet and a crypto/forex trader",
+      image: "/DP1.jpeg", // Slightly increased image size
+      skills: ["Motion Graphics", "Poetry", "Crypto Trading"],
+      twitter: "https://x.com/hemmy499",
     },
     {
-      name: "Michael Chen",
-      position: "Managing Editor",
+      name: "Farmie",
+      position: "Founder",
       bio: "Technology and business specialist with expertise in digital media and emerging trends.",
-      image: "https://via.placeholder.com/180",
-      skills: ["Technology", "Business", "Digital Media"],
-      twitter: "https://x.com/michaelchen",
+      image: "DP2.jpeg", // Slightly increased image size
+      skills: ["Digital Media", "Business Strategy", "Emerging Trends"],
+      twitter: "https://x.com/Farmie_KIND",
     },
     {
-      name: "Emily Rodriguez",
-      position: "Senior Reporter",
+      name: "Cute Aunty",
+      position: "Sign news Intern",
       bio: "Investigative journalist focusing on environmental and social justice issues.",
-      image: "https://via.placeholder.com/180",
+      image: "DP3.jpeg", // Slightly increased image size
       skills: ["Investigative Reporting", "Environment", "Social Justice"],
-      twitter: "https://x.com/emilyrodriguez",
+      twitter: "https://x.com/pikmenaba",
     },
     {
-      name: "David Kim",
-      position: "Video Producer",
-      bio: "Creative director specializing in multimedia storytelling and documentary production.",
-      image: "https://via.placeholder.com/180",
-      skills: ["Video Production", "Storytelling", "Documentary"],
-      twitter: "https://x.com/davidkim",
+      name: "Big_D",
+      position: "Sign news Developer",
+      bio: "I’m a full-stack developer with a passion for creating innovative web applications. I love turning ideas into reality through code.",
+      image: "DP4.jpg", // Slightly increased image size
+      skills: ["FrontendDeveloper", "Backend Developer", "UIUX Designer"],
+      twitter: "https://x.com/_BigDe",
     },
     {
-      name: "Lisa Thompson",
-      position: "Content Manager",
-      bio: "Social media strategist and content creator with expertise in audience engagement.",
-      image: "https://via.placeholder.com/180",
-      skills: ["Social Media", "Content Strategy", "Audience Engagement"],
-      twitter: "https://x.com/lisathompson",
+      name: "ProfBright",
+      position: "Sign news Storyteller",
+      bio: "I’m a story writer and the voice behind Sign News & Entertainment.🧡",
+      image: "DP5.jpeg", // Slightly increased image size
+      skills: ["Storytelling", "Content Creation", "Social Media Management"],
+      twitter: "https://x.com/proftbright",
     },
     {
-      name: "James Wilson",
-      position: "Sports Editor",
-      bio: "Former professional athlete turned journalist covering major sporting events.",
-      image: "https://via.placeholder.com/180",
-      skills: ["Sports Journalism", "Event Coverage", "Athletic Analysis"],
-      twitter: "https://x.com/jameswilson",
+      name: "Johnny Sign",
+      position: "Sign news Educational video creator",
+      bio: "I’m Creative mind in motion. I’m a Web3 enthusiast and video animation specialist, passionate about bringing stories to life through tech and visuals",
+      image: "DP6.jpeg", // Slightly increased image size
+      skills: ["Video Animation", "Web3", "Content Creation"],
+      twitter: "https://x.com/johnnykepuz",
+    },
+    {
+      name: "CYBROX",
+      position: "Sign news Major wins Announcer",
+      bio: "Expert in health and wellness topics, focusing on mental health and nutrition.",
+      image: "DP7.jpeg", // Slightly increased image size
+      skills: ["Health Writing", "Nutrition", "Mental Health"],
+      twitter: "https://x.com/manuelchuk89697",
+    },
+    {
+      name: "BossGe",
+      position: "Sign news Editor",
+      bio: "I'm a web3 memes creator, graphic designer, video editor and moderator.",
+      image: "DP8.jpeg", // Slightly increased image size
+      skills: ["Web3 Memes", "Graphic Design", "Video Editing"],
+      twitter: "https://x.com/bossge226456",
+    },
+    {
+      name: "Bern Signcares",
+      position: "Sign news Amplifier",
+      bio: "Lifestyle and fashion influencer with a focus on entertainment and pop culture.",
+      image: "DP9.jpeg", // Slightly increased image size
+      skills: ["Lifestyle", "Fashion", "Entertainment"],
+      twitter: "https://x.com/BernSigncares",
+    },
+    {
+      name: "Hey Amari",
+      position: "Sign news Reporter",
+      bio: "Experienced political journalist covering local and national elections.",
+      image: "DP10.jpeg", // Slightly increased image size
+      skills: ["Political Reporting", "Elections", "Policy Analysis"],
+      twitter: "https://x.com/Amari_matex",
     },
   ]
 

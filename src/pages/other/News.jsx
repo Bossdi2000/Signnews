@@ -34,6 +34,8 @@ const News = () => {
     4: 0,
     5: 0,
     6: 0,
+    7: 0,
+    8: 0,
   })
 
   const [liked, setLiked] = useState({
@@ -43,6 +45,8 @@ const News = () => {
     4: false,
     5: false,
     6: false,
+    7: false,
+    8: false,
   })
 
   const toggleLike = (id) => {
@@ -71,7 +75,7 @@ const News = () => {
       id: 1,
       title: "Sign CEO Unveils Bold Vision for Blockchain Civilization at Danjo Capital AMA",
       summary: "Xin Yan shares Sign's roadmap for digital nation-building and blockchain infrastructure.",
-      writer: "Sign Team",
+      writer: "Just Hemmy",
       videoUrl: "/VID1.mp4",
       type: "video",
       category: "Blockchain",
@@ -367,7 +371,7 @@ const News = () => {
       id: 3,
       title: "Sign CEO Xin Yan Discusses Digital Identity, Token Governance, and the Future of Web3 on Korean TV",
       summary: "Xin Yan highlights Sign's role in digital identity and token governance on Korean TV.",
-      writer: "Sign Team",
+      writer: "Just Hemmy",
       image: "/IMG3.jpeg",
       type: "image",
       category: "Blockchain",
@@ -444,7 +448,7 @@ const News = () => {
       title: "Weekly Story Episode by @proftbright - Episode 1: Ironed with Honour",
       summary:
         "A inspiring story about Kelechi, who owned only one pair of faded trousers but carried himself with quiet confidence and unwavering determination.",
-      writer: "@proftbright",
+      writer: "Proftbright",
       image: "/IMG44.jpeg",
       type: "image",
       category: "Community",
@@ -729,7 +733,7 @@ const News = () => {
       title: "Bybit Hosts 'Deep Dive into SIGN' Twitter Space, Showcasing EthSign's On-Chain Agreement Vision",
       summary:
         "Bybit hosted a live AMA-style discussion featuring Claire, the 'Product Queen', offering insights into Sign's vision and $SIGN token potential.",
-      writer: "Sign Team",
+      writer: "Just Hemmy",
       image: "/IMG5.jpeg",
       type: "image",
       category: "Blockchain",
@@ -848,6 +852,366 @@ const News = () => {
           >
             The session also explored the potential of the $SIGN token and its role within the ecosystem, providing
             attendees with valuable information about the project's tokenomics and future utility.
+          </Typography>
+        </>
+      ),
+    },
+    {
+      id: 7,
+      title: "Sign CEO Reveals Major Update: Sign App Public Test Launching Soon with Social, Gaming & KTV Features",
+      summary:
+        "Xin Yan unveils the upcoming public test launch of the Sign App with integrated games, social features, merch store, and karaoke functionality.",
+      writer: "Just Hemmy",
+      image: "/IMG7.jpeg",
+      type: "image",
+      category: "Product Updates",
+      date: "2025-06-23",
+      fullContent: (
+        <>
+          <Typography
+            variant="h5"
+            sx={{
+              fontFamily: "'Roboto Slab', Georgia, serif",
+              color: "#722F37",
+              mb: 2,
+              fontWeight: "bold",
+              fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+            }}
+          >
+            Sign CEO Reveals Major Update: Sign App Public Test Launching Soon with Social, Gaming & KTV Features
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            <strong>By Sign Team | June 23, 2025</strong>
+          </Typography>
+          <Box sx={{ mb: 3, textAlign: "center" }}>
+            <img
+              src="/IMG7.jpeg"
+              alt="Sign App Public Test Launch"
+              style={{
+                width: "100%",
+                maxWidth: "600px",
+                height: "auto",
+                borderRadius: "10px",
+                boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+              }}
+            />
+          </Box>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            In a major announcement on Monday, June 23rd, Xin Yan, Co-founder and CEO of Sign Crypto, delivered an
+            exciting update that has the community buzzing. Speaking during an internal update to the Sign community,
+            Mr. Yan unveiled the upcoming public test launch of the Sign App, marking a new chapter in the platform's
+            mission to blend blockchain utility with real-world digital lifestyle experiences.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            <strong>🔹 What's Inside the Sign App?</strong>
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            The Sign App aims to go far beyond basic crypto utilities, offering a multi-functional platform designed to
+            engage users in both fun and utility. Here's a closer look at the features revealed:
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            <strong>🎮 Integrated Blockchain Games</strong>
+            <br />
+            The app will come equipped with casual, accessible games that integrate Sign's token ecosystem, allowing
+            users to earn, play, and socialize in a gamified blockchain environment.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            <strong>💬 Swipe-Based Social Platform</strong>
+            <br />
+            Described as a "Web3-native social layer," the Sign App introduces a swipe-based interaction model for
+            blockchain users. Users can discover profiles, connect with community members, and build digital tribes, all
+            powered by verified on-chain identity.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            <strong>🛍 Merch Store</strong>
+            <br />
+            The app will also include a merchandise store, offering Sign-branded goods and exclusive digital-to-physical
+            drops. The goal is to give the community more ways to express belonging—and potentially earn through creator
+            collaborations.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            <strong>🎤 Online KTV (Karaoke)</strong>
+            <br />
+            In one of the most surprising—and culturally resonant—features, the app will include a karaoke experience,
+            allowing users to sing, record, and share performances within the community. It taps into the vibrant music
+            and entertainment culture particularly popular in Sign's core markets such as the Philippines and Southeast
+            Asia.
+          </Typography>
+        </>
+      ),
+    },
+    {
+      id: 8,
+      title: "Sign CEO Xin Yan on Web3 Talk: 'We're Building the Digital Infrastructure Layer for Nations'",
+      summary:
+        "Xin Yan positions Sign as a digital infrastructure partner for emerging economies, building foundational systems for governments and citizens.",
+      writer: "Just Hemmy",
+      image: "/IMG6.jpeg",
+      type: "image",
+      category: "Infrastructure",
+      date: "2025-06-20",
+      fullContent: (
+        <>
+          <Typography
+            variant="h5"
+            sx={{
+              fontFamily: "'Roboto Slab', Georgia, serif",
+              color: "#722F37",
+              mb: 2,
+              fontWeight: "bold",
+              fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+            }}
+          >
+            Sign CEO Xin Yan on Web3 Talk: 'We're Building the Digital Infrastructure Layer for Nations'
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            <strong>By Sign Team | June 20, 2025</strong>
+          </Typography>
+          <Box sx={{ mb: 3, textAlign: "center" }}>
+            <img
+              src="/IMG6.jpeg"
+              alt="Sign CEO Xin Yan Web3 Talk"
+              style={{
+                width: "100%",
+                maxWidth: "600px",
+                height: "auto",
+                borderRadius: "10px",
+                boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+              }}
+            />
+          </Box>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            In a new episode of Web3 Talk, Xin Yan, Co-founder and CEO of Sign Crypto, laid out a bold vision for the
+            future of blockchain: not just powering communities and products—but underpinning national digital
+            infrastructure.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            Speaking with clarity and conviction, Yan positioned Sign as more than a crypto startup. It is, he says, "a
+            digital infrastructure partner for emerging economies," combining the principles of Web3 with the scale of
+            public-sector ambition.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            "Think of Sign like a state-owned enterprise, but globally deployable," he explained. "We build the
+            rails—digital ID, payments, token governance—that governments and citizens can actually rely on."
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            <strong>🔹 From Web3 Startup to Digital Infrastructure Builder</strong>
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            The conversation focused heavily on Sign's transformation from a product-centric Web3 company to a builder
+            of foundational systems that serve not only crypto-native users but national governments, NGOs, and public
+            programs.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            Yan described Sign's mission as building the "backend layer" for countries entering the digital age—a vision
+            aligned with transparency, inclusivity, and long-term societal value.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            This includes infrastructure for:
+            <br />• Digital identity systems
+            <br />• Stablecoin frameworks
+            <br />• Public benefit distribution (like welfare or aid)
+            <br />• Land title registration
+            <br />• Central bank digital currencies (CBDCs)
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            "We're not chasing trends," Yan noted. "We're solving hard, practical problems for real-world economies."
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            <strong>🔹 TokenTable: A Global Standard in Token Governance</strong>
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            A key part of this strategy is TokenTable, Sign's flagship platform for token distribution and investor
+            rights. With over 60% market share across major chains like TON and OKX, TokenTable is already trusted by a
+            wide range of Web3 projects from stablecoins to meme tokens.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            But the real innovation, according to Yan, lies in how TokenTable aligns token governance with policy-grade
+            transparency.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            "TokenTable brings structure where there's been chaos," Yan said. "It guarantees fair release schedules,
+            real accountability, and sharding infrastructure built for scale."
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            The platform is now being pitched not just to private projects, but governments and institutions, as a way
+            to issue, track, and regulate digital assets in compliance with future global standards.
           </Typography>
         </>
       ),
@@ -984,7 +1348,7 @@ const News = () => {
           }}
         >
           {newsData.map((news, index) => (
-            <Grid item xs={12} sm={6} key={news.id}>
+            <Grid item xs={12} sm={6} md={3} key={news.id}>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -994,9 +1358,9 @@ const News = () => {
               >
                 <Card
                   sx={{
-                    height: "450px", // Matches CoreTeamPage
+                    height: "450px",
                     width: "100%",
-                    maxWidth: "450px", // Matches CoreTeamPage
+                    maxWidth: "450px",
                     mx: "auto",
                     display: "flex",
                     flexDirection: "column",

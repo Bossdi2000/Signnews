@@ -44,7 +44,7 @@ const Navbar = () => {
               window.location.href = item.href // Navigate using window.location.href
               handleDrawerToggle() // Close the drawer after navigation
             }}
-            button // Ensure ListItem behaves like a button
+            button
           >
             <ListItemText
               primary={item.text}
@@ -61,7 +61,7 @@ const Navbar = () => {
                 },
                 "& .MuiTypography-root": {
                   fontFamily: "'Open Sans', Helvetica, sans-serif",
-                  fontSize: { xs: "0.85rem", sm: "0.9rem" },
+                  fontSize: { xs: "0.8rem", sm: "0.85rem" },
                 },
               }}
             />
@@ -69,18 +69,25 @@ const Navbar = () => {
         ))}
         <ListItem sx={{ borderBottom: "1px solid rgba(255,255,255,0.1)", py: 1.5 }}>
           <Button
-            href="#join-us" // Kept as is; update if it should navigate to a page
+            href="https://x.com/0xsign_news"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
               width: "100%",
               background: "linear-gradient(90deg, #722F37, #4B1C22)",
               color: "white",
               textTransform: "none",
-              fontWeight: "bold",
+              fontWeight: 600,
               borderRadius: "25px",
-              py: { xs: 1, sm: 1.5 },
+              py: 1,
               px: { xs: 2, sm: 3 },
               border: "2px solid transparent",
               transition: "all 0.3s ease",
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              fontSize: { xs: "0.8rem", sm: "0.85rem" },
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
               "&:hover": {
                 background: "linear-gradient(90deg, #4B1C22, #722F37)",
                 border: "2px solid #722F37",
@@ -88,30 +95,12 @@ const Navbar = () => {
                 transform: "translateY(-2px)",
               },
               animation: "pulseBorder 2s infinite",
-              fontFamily: "'Open Sans', Helvetica, sans-serif",
-              fontSize: { xs: "0.85rem", sm: "0.9rem" },
             }}
           >
             Join Us
           </Button>
         </ListItem>
       </List>
-      <style jsx global>{`
-        @keyframes pulseBorder {
-          0% {
-            border-color: rgba(114, 47, 55, 0.4);
-            box-shadow: 0 0 5px rgba(114, 47, 55, 0.4);
-          }
-          50% {
-            border-color: rgba(114, 47, 55, 1);
-            box-shadow: 0 0 15px rgba(114, 47, 55, 0.8);
-          }
-          100% {
-            border-color: rgba(114, 47, 55, 0.4);
-            box-shadow: 0 0 5px rgba(114, 47, 55, 0.4);
-          }
-        }
-      `}</style>
     </Box>
   )
 
@@ -181,17 +170,17 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Box sx={{ display: "flex", gap: { xs: 1, sm: 2, md: 3, lg: 4 }, alignItems: "center" }}>
+              <Box sx={{ display: "flex", gap: { xs: 1, sm: 2, md: 3 }, alignItems: "center" }}>
                 {menuItems.map((item) => (
                   <motion.div key={item.text} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button
-                      onClick={() => window.location.href = item.href} // Navigate using window.location.href
+                      onClick={() => (window.location.href = item.href)}
                       color="inherit"
                       sx={{
-                        fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem", lg: "1rem" },
+                        fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
                         fontWeight: 500,
                         textTransform: "none",
-                        px: { xs: 1.5, sm: 2, md: 3 },
+                        px: { xs: 2, sm: 3 },
                         py: 1,
                         borderRadius: "25px",
                         transition: "all 0.3s ease",
@@ -211,19 +200,25 @@ const Navbar = () => {
                 ))}
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button
-                    href="#join-us" // Kept as is; update if it should navigate to a page
+                    href="https://x.com/0xsign_news"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     sx={{
-                      fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem", lg: "1rem" },
+                      fontSize: { xs: "0.8rem", sm: "0.85rem", md: "0.9rem" },
                       fontWeight: 600,
                       textTransform: "none",
-                      px: { xs: 2, sm: 3, md: 4 },
-                      py: { xs: 0.75, sm: 1 },
+                      px: { xs: 2, sm: 3 },
+                      py: 1,
                       borderRadius: "25px",
                       background: "linear-gradient(90deg, #722F37, #4B1C22)",
                       color: "white",
                       border: "2px solid transparent",
                       transition: "all 0.3s ease",
                       fontFamily: "'Open Sans', Helvetica, sans-serif",
+                      minWidth: { xs: "80px", md: "100px" },
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                       "&:hover": {
                         background: "linear-gradient(90deg, #4B1C22, #722F37)",
                         border: "2px solid #722F37",
