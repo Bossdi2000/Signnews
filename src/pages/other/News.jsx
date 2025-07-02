@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+
 import {
   Box,
   Container,
@@ -15,7 +16,9 @@ import {
   Paper,
   IconButton,
 } from "@mui/material"
+
 import { motion } from "framer-motion"
+
 import PlayArrowIcon from "@mui/icons-material/PlayArrow"
 import ImageIcon from "@mui/icons-material/Image"
 import ArticleIcon from "@mui/icons-material/Article"
@@ -32,6 +35,7 @@ const News = () => {
     5: 0,
     6: 0,
   })
+
   const [liked, setLiked] = useState({
     1: false,
     2: false,
@@ -88,7 +92,12 @@ const News = () => {
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
             <strong>By Sign Team | June 27, 2025</strong>
           </Typography>
@@ -109,7 +118,12 @@ const News = () => {
           </Box>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
             On Tuesday, June 27th, blockchain enthusiasts tuned in for a thought-provoking AMA hosted by Danjo Capital,
             where Xin Yan, Co-founder and CEO of Sign Crypto, shared his story, philosophy, and an ambitious roadmap for
@@ -118,9 +132,15 @@ const News = () => {
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            <strong>From Hardware Dreams to Global Impact</strong><br />
+            <strong>From Hardware Dreams to Global Impact</strong>
+            <br />
             Mr. Yan began the session by tracing his roots back to his early passion for hardware and electronic
             engineering. A builder at heart, he described how this technical curiosity gradually evolved into a
             fascination with blockchain—a technology he believes goes beyond just code or decentralization.
@@ -134,9 +154,15 @@ const News = () => {
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            <strong>Sign's Vision: Infrastructure for the Digital Age</strong><br />
+            <strong>Sign's Vision: Infrastructure for the Digital Age</strong>
+            <br />
             At its core, Sign is a blockchain technology company, but its ambitions stretch far beyond any single
             product. The company's flagship offering, TokenTable, is already a market leader in token distribution
             infrastructure, reportedly holding around 60% market share and serving millions of wallets across major
@@ -145,20 +171,27 @@ const News = () => {
             "We're shifting from a Web3 product company to a national infrastructure partner," Yan said. "We want to do
             for digital systems what civil engineers do for roads and bridges."
             <br />
-            Current initiatives include:<br />
-            • Digital ID systems<br />
-            • Payment rails and stablecoins<br />
-            • CBDC (Central Bank Digital Currency) frameworks<br />
-            • Welfare distribution systems<br />
-            • Land titling solutions<br />
+            Current initiatives include:
+            <br />• Digital ID systems
+            <br />• Payment rails and stablecoins
+            <br />• CBDC (Central Bank Digital Currency) frameworks
+            <br />• Welfare distribution systems
+            <br />• Land titling solutions
+            <br />
             These are not just concepts. According to Yan, Sign is in partnership with six countries, with pilot
             programs already underway.
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            <strong>A Philosophy Rooted in Fairness and Sovereignty</strong><br />
+            <strong>A Philosophy Rooted in Fairness and Sovereignty</strong>
+            <br />
             Beyond the tech, Yan shared a powerful vision: blockchain as a tool for fairness, sovereignty, and freedom.
             He contrasted decentralized systems with the dominance of the U.S. dollar, pointing to blockchain's
             potential to offer neutral, global alternatives that protect users from geopolitical influence.
@@ -171,9 +204,15 @@ const News = () => {
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            <strong>A Warning Against the "Casino Mentality"</strong><br />
+            <strong>A Warning Against the "Casino Mentality"</strong>
+            <br />
             During the AMA, Yan also addressed the cultural challenges in crypto today. He criticized the tendency to
             treat blockchain as a speculative playground, likening it to a "casino culture" dominated by hype, meme
             coins, and short-term thinking.
@@ -183,20 +222,32 @@ const News = () => {
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            <strong>Recommended Readings: Sapiens & The Contrarian</strong><br />
+            <strong>Recommended Readings: Sapiens & The Contrarian</strong>
+            <br />
             For those looking to understand the philosophical foundation behind Sign's direction, Yan recommended two
-            key books:<br />
-            • "Sapiens" by Yuval Noah Harari – for its deep dive into human history and systems of coordination.<br />
-            • "The Contrarian" by Peter Thiel – for its insight into original thinking and navigating complex
+            key books:
+            <br />• "Sapiens" by Yuval Noah Harari – for its deep dive into human history and systems of coordination.
+            <br />• "The Contrarian" by Peter Thiel – for its insight into original thinking and navigating complex
             systems.
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            <strong>Looking Ahead</strong><br />
+            <strong>Looking Ahead</strong>
+            <br />
             Sign wasn't just a product update, it was a manifesto for the next phase of blockchain: civilizational tech,
             built with human needs at the center.
             <br />
@@ -234,7 +285,12 @@ const News = () => {
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
             <strong>By Johnny Sign | July 2, 2025</strong>
           </Typography>
@@ -255,9 +311,15 @@ const News = () => {
           </Box>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            GM, Sign Fam!<br />
+            GM, Sign Fam!
+            <br />
             Johnny Sign here again and today we're diving deep into one of the most important tools in the Sign
             ecosystem: TokenTable. Whether you're a project founder, investor, or just Web3-curious, this breakdown will
             help you understand why TokenTable is fast becoming the go-to solution for token management in the crypto
@@ -265,24 +327,37 @@ const News = () => {
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            <strong>The Challenge: Web3 Is Booming, But Token Management Is Messy</strong><br />
+            <strong>The Challenge: Web3 Is Booming, But Token Management Is Messy</strong>
+            <br />
             Let's be real — building in Web3 is thrilling. The potential is massive, the communities are vibrant, and
             innovation is non-stop. But there's a big issue many teams run into: token distribution and unlocks.
             <br />
-            Managing things like:<br />
-            • Vesting schedules<br />
-            • Airdrops<br />
-            • Investor transparency<br />
-            • Tokenomics visualization<br />
+            Managing things like:
+            <br />• Vesting schedules
+            <br />• Airdrops
+            <br />• Investor transparency
+            <br />• Tokenomics visualization
+            <br />
             …can become overwhelming, especially when done manually or with scattered tools.
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            <strong>The Solution: TokenTable by Sign</strong><br />
+            <strong>The Solution: TokenTable by Sign</strong>
+            <br />
             TokenTable was designed to solve these exact challenges.
           </Typography>
         </>
@@ -313,7 +388,12 @@ const News = () => {
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
             <strong>By Sign Team | June 27, 2025</strong>
           </Typography>
@@ -332,7 +412,12 @@ const News = () => {
           </Box>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
             In a groundbreaking television appearance on Korean national TV, Sign CEO Xin Yan shared insights into the
             future of digital identity and token governance, highlighting how blockchain technology is reshaping the way
@@ -340,7 +425,12 @@ const News = () => {
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
             During the interview, Yan emphasized the importance of building robust digital identity systems that give
             users control over their personal data while enabling seamless interactions across different platforms and
@@ -351,12 +441,14 @@ const News = () => {
     },
     {
       id: 4,
-      title: "Cultural Festival Celebrates Diversity",
-      summary: "Annual celebration brings communities together in unity and harmony.",
+      title: "Weekly Story Episode by @proftbright - Episode 1: Ironed with Honour",
+      summary:
+        "A inspiring story about Kelechi, who owned only one pair of faded trousers but carried himself with quiet confidence and unwavering determination.",
+      writer: "@proftbright",
       image: "/IMG44.jpeg",
       type: "image",
-      category: "Culture",
-      date: "2024-01-12",
+      category: "Community",
+      date: "2025-06-01",
       fullContent: (
         <>
           <Typography
@@ -369,18 +461,23 @@ const News = () => {
               fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
             }}
           >
-            Cultural Festival Celebrates Diversity
+            Weekly Story Episode by @proftbright - Episode 1: Ironed with Honour
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            <strong>January 12, 2024</strong>
+            <strong>By @proftbright | June 1, 2025</strong>
           </Typography>
           <Box sx={{ mb: 3, textAlign: "center" }}>
             <img
-              src="/IMG44.png"
-              alt="Cultural Festival"
+              src="/IMG44.jpeg"
+              alt="Ironed with Honour Story"
               style={{
                 width: "100%",
                 maxWidth: "600px",
@@ -392,30 +489,100 @@ const News = () => {
           </Box>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            The annual cultural festival brought together communities from diverse backgrounds in a celebration of unity
-            and harmony. This year's event featured performances, art exhibitions, and cultural exchanges that
-            highlighted the rich tapestry of traditions and customs from around the world.
+            <strong>Episode 1: Ironed with Honour</strong>
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            Attendees enjoyed traditional music, dance performances, and authentic cuisine from various cultures,
-            creating an atmosphere of mutual understanding and appreciation for diversity.
+            In a small town where everyone knew each other, there was a guy named Kelechi who owned only one pair of
+            trousers — faded blue, worth maybe ₦500 (about $0.3125) at best — but every morning, he ironed them like
+            they were designer.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            He'd walk through town square with quiet confidence, even though the soles of his shoes whispered to the
+            ground.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            "See this one," they'd chuckle at the barber shop. "Walking like he owns the bank, but he can't even afford
+            data."
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            But Kelechi heard none of it. He was too focused.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            Each morning before sunrise, he studied digital design at a tiny cyber café. He'd save half of his ₦2,000
+            ($1.3125) weekly earnings — sometimes skipping lunch — because he believed in a future he hadn't seen, but
+            already lived in his mind.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            <strong>Episode 2 coming next…</strong>
           </Typography>
         </>
       ),
     },
     {
       id: 5,
-      title: "Medical Research Breakthrough",
-      summary: "New treatment shows promising results in clinical trials.",
-      image: "/placeholder.svg?height=250&width=400",
+      title: "Welcome to Sign News - Top Creators of the Week Spotlight",
+      summary:
+        "Farmie, your Sign Marites, celebrates the top creators who've been building amazing things in the Sign community.",
+      writer: "Farmie",
+      videoUrl: "/VID3.mp4",
       type: "video",
-      category: "Health",
-      date: "2024-01-11",
+      category: "Community",
+      date: "2025-06-01",
       fullContent: (
         <>
           <Typography
@@ -428,31 +595,145 @@ const News = () => {
               fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
             }}
           >
-            Medical Research Breakthrough
+            Welcome to Sign News - Top Creators of the Week Spotlight
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            <strong>January 11, 2024</strong>
+            <strong>By Farmie, Your Sign Marites | June 1, 2025</strong>
+          </Typography>
+          <Box sx={{ position: "relative", paddingTop: "56.25%", mb: 3 }}>
+            <video
+              controls
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <source src="/VID3.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </Box>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            Hey Sign community! It's June 1st, and we're kicking off the month with a bang!
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            New treatment shows promising results in clinical trials, offering hope for patients worldwide.
+            It's not just a new month — it's also the start of a fresh lineup for our Top Creators of the Week!
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            These are the voices in our community who've been showing up, building amazing things, and keeping the Sign
+            energy high. Whether through creativity, engagement, or collaboration, they've earned the spotlight this
+            week.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            Let's celebrate these stars who are shaping the Sign story:
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            • @hemmy499
+            <br />• @smarychain01
+            <br />• @wageivan
+            <br />• @signrealchef
+            <br />• @rollandosilva7
+            <br />• @blackbee30
+            <br />• @brave_rengoku
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            Congratulations once again top creators! Keep building and inspire more people. Always be the best version
+            of yourself.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            That's it for now. Stick with us here on Sign news as we continue to spotlight incredible talent and
+            celebrate community wins.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            Once again this is Farmie, Your Sign Marites.
           </Typography>
         </>
       ),
     },
     {
       id: 6,
-      title: "Environmental Conservation Success",
-      summary: "Wildlife preservation efforts show remarkable positive impact.",
-      image: "/placeholder.svg?height=250&width=400",
+      title: "Bybit Hosts 'Deep Dive into SIGN' Twitter Space, Showcasing EthSign's On-Chain Agreement Vision",
+      summary:
+        "Bybit hosted a live AMA-style discussion featuring Claire, the 'Product Queen', offering insights into Sign's vision and $SIGN token potential.",
+      writer: "Sign Team",
+      image: "/IMG5.jpeg",
       type: "image",
-      category: "Environment",
-      date: "2024-01-10",
+      category: "Blockchain",
+      date: "2025-06-04",
       fullContent: (
         <>
           <Typography
@@ -465,19 +746,108 @@ const News = () => {
               fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
             }}
           >
-            Environmental Conservation Success
+            Bybit Hosts 'Deep Dive into SIGN' Twitter Space, Showcasing EthSign's On-Chain Agreement Vision and $SIGN
+            Token Potential
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            <strong>January 10, 2024</strong>
+            <strong>By Sign Team | June 4, 2025</strong>
+          </Typography>
+          <Box sx={{ mb: 3, textAlign: "center" }}>
+            <img
+              src="/IMG5.jpeg"
+              alt="Bybit Deep Dive into SIGN Twitter Space"
+              style={{
+                width: "100%",
+                maxWidth: "600px",
+                height: "auto",
+                borderRadius: "10px",
+                boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+              }}
+            />
+          </Box>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            <strong>Event Details:</strong>
           </Typography>
           <Typography
             variant="body1"
-            sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", mb: 2, lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
           >
-            Wildlife preservation efforts show remarkable positive impact, with significant improvements in biodiversity and habitat restoration.
+            • <strong>Host:</strong> Bybit Official X account
+            <br />• <strong>Topic:</strong> Deep Dive into SIGN (with EthSign, the on-chain signature/agreement
+            protocol)
+            <br />• <strong>Date & Time:</strong> June 4, 2025 at 10:00 AM UTC
+            <br />• <strong>Format:</strong> Live AMA-style discussion
+            <br />• <strong>Incentive:</strong> Attendees had a chance to win from a $250 USDT bonus pool
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            On Wednesday, June 4th, Bybit hosted a live Space titled 'Deep Dive into Sign,' featuring Claire known to
+            many as the 'Product Queen' offering valuable insights into the vision and purpose behind Sign.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            The discussion covered EthSign's innovative approach to on-chain agreements and digital signatures,
+            highlighting how the protocol is revolutionizing the way contracts and agreements are handled in the Web3
+            space.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            Claire provided deep insights into the technical architecture and future roadmap of Sign, explaining how the
+            platform enables secure, transparent, and immutable agreement processes that can be verified on-chain.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "'Open Sans', Helvetica, sans-serif",
+              mb: 2,
+              lineHeight: 1.6,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+            }}
+          >
+            The session also explored the potential of the $SIGN token and its role within the ecosystem, providing
+            attendees with valuable information about the project's tokenomics and future utility.
           </Typography>
         </>
       ),
@@ -507,7 +877,7 @@ const News = () => {
   }
 
   const renderMediaContent = (news) => {
-    if (news.videoUrl && (news.id === 1 || news.id === 2)) {
+    if (news.videoUrl && (news.id === 1 || news.id === 2 || news.id === 5)) {
       return (
         <Box sx={{ position: "relative", height: "200px" }}>
           <video
@@ -718,6 +1088,7 @@ const News = () => {
                         {news.summary}
                       </Typography>
                     </Box>
+
                     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                       <Button
                         variant="contained"
@@ -748,7 +1119,11 @@ const News = () => {
                         <FavoriteIcon sx={{ fontSize: { xs: "1rem", sm: "1.2rem" } }} />
                         <Typography
                           variant="caption"
-                          sx={{ ml: 0.5, fontFamily: "'Open Sans', Helvetica, sans-serif", fontSize: { xs: "0.65rem", sm: "0.75rem" } }}
+                          sx={{
+                            ml: 0.5,
+                            fontFamily: "'Open Sans', Helvetica, sans-serif",
+                            fontSize: { xs: "0.65rem", sm: "0.75rem" },
+                          }}
                         >
                           {likes[news.id]}
                         </Typography>
@@ -788,7 +1163,11 @@ const News = () => {
                 {selectedNews.fullContent || (
                   <Typography
                     variant="body1"
-                    sx={{ fontFamily: "'Open Sans', Helvetica, sans-serif", lineHeight: 1.6, fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" } }}
+                    sx={{
+                      fontFamily: "'Open Sans', Helvetica, sans-serif",
+                      lineHeight: 1.6,
+                      fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                    }}
                   >
                     {selectedNews.summary}
                   </Typography>
