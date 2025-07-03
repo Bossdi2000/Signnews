@@ -8,26 +8,42 @@ const CoreTeamPage = () => {
     {
       name: "Just Hemmy",
       position: "Founder",
-      bio: "I’m hemmy, motion-graphics animator, poet and a crypto/forex trader",
+      bio: "I’m hemmy, A crypto and forex trader, motion-graphics animator and News writer, combining visual storytelling with precise, poetic language to communicate complex ideas clearly and creatively.",
       image: "/DP1.jpeg", // Slightly increased image size
-      skills: ["Motion Graphics", "Poetry", "Crypto Trading"],
+      skills: ["Crypto Trading", "Forex Trading", "Motion Graphics"],
       twitter: "https://x.com/hemmy499",
     },
     {
       name: "Farmie",
       position: "Founder",
-      bio: "Technology and business specialist with expertise in digital media and emerging trends.",
+      bio: "I'm Farmie a crypto enthusiast, futures trader, content creator and community lead.",
       image: "DP2.jpeg", // Slightly increased image size
-      skills: ["Digital Media", "Business Strategy", "Emerging Trends"],
+      skills: ["Crypto Enthusiast", "Futures Trading", "Content Creation"],
       twitter: "https://x.com/Farmie_KIND",
     },
     {
       name: "Cute Aunty",
       position: "Sign news Intern",
-      bio: "Investigative journalist focusing on environmental and social justice issues.",
+      bio: "I'm Cutie Aunty, Sign News and Entertainment Intern, Web3 explorer, content creator, and space host.",
       image: "DP3.jpeg", // Slightly increased image size
-      skills: ["Investigative Reporting", "Environment", "Social Justice"],
+      skills: ["Web3 Explorer", "Content Creation", "Space Hosting"],
       twitter: "https://x.com/pikmenaba",
+    },
+    {
+      name: "Thoth",
+      position: "Sign news Community Lead",
+      bio: "I'm Thoth, a crypto enthusiast and a good quality content creator standing as a huge supporter of Sign News & Entertainment",
+      image: "DP12.jpeg", // Slightly increased image size
+      skills: ["Crypto Enthusiast", "Content Creation", "Community Support"],
+      twitter: "https://x.com/Trojan_Bus1",
+    },
+    {
+      name: "Lucky Esemuede",
+      position: "Sign news Community Lead",
+      bio: "I'm Lucky, an early contributor of Sign with outstanding support for the Sign News & Entertainment.",
+      image: "DP13.jpeg", // Slightly increased image size
+      skills: ["Crypto Enthusiast", "Content Creation", "Community Support"],
+      twitter: "https://x.com/Lucky_of_web3",
     },
     {
       name: "Big_D",
@@ -40,9 +56,9 @@ const CoreTeamPage = () => {
     {
       name: "ProfBright",
       position: "Sign news Storyteller",
-      bio: "I’m a story writer and the voice behind Sign News & Entertainment.🧡",
+      bio: "I'm brightto ---Writer || Founder of @signscroll || crypto enthusiast || Fx trader || voice behind Sign news and Entertainment 🍊🐉🧡",
       image: "DP5.jpeg", // Slightly increased image size
-      skills: ["Storytelling", "Content Creation", "Social Media Management"],
+      skills: ["Writing", "Crypto Enthusiast", "Voice Acting"],
       twitter: "https://x.com/proftbright",
     },
     {
@@ -72,18 +88,26 @@ const CoreTeamPage = () => {
     {
       name: "Bern Signcares",
       position: "Sign news Amplifier",
-      bio: "Lifestyle and fashion influencer with a focus on entertainment and pop culture.",
+      bio: "I am Bern your Sign Quote... A motivator for everyone and I'm happy to lift your mood up with my motivational quote. ",
       image: "DP9.jpeg", // Slightly increased image size
-      skills: ["Lifestyle", "Fashion", "Entertainment"],
+      skills: ["Motivational Speaking", "Content Creation", "Community Engagement"],
       twitter: "https://x.com/BernSigncares",
     },
     {
       name: "Hey Amari",
       position: "Sign news Reporter",
-      bio: "Experienced political journalist covering local and national elections.",
+      bio: "| Sign Storyteller | Orange Mic Host and Founder On-chain energy. I host, I vibe, I build. Bridging stories, culture & community through Sign waves and entertainment.",
       image: "DP10.jpeg", // Slightly increased image size
-      skills: ["Political Reporting", "Elections", "Policy Analysis"],
+      skills: ["Storytelling", "Community Building", "Entertainment"],
       twitter: "https://x.com/Amari_matex",
+    },
+    {
+      name: "AJ_cr",
+      position: "Sign news Reporter",
+      bio: "I’m Aj, known as Aj_cr on X. 4 years in crypto. Leading the Indian Orange Dynasty. A Reasearcher, Content writer & video editor.",
+      image: "DP11.jpeg", // Slightly increased image size
+      skills: ["Crypto Research", "Content Writing", "Video Editing"],
+      twitter: "https://x.com/Aj_cr",
     },
   ]
 
