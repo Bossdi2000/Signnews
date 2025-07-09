@@ -71,6 +71,666 @@ const News = () => {
   }
 
   const newsData = [
+     {
+          id: 1,
+          title: "Episode 2: The Flat Tire",
+          summary:
+            "Kelechi's journey continues as a simple act of kindness leads to an unexpected opportunity that could change everything.",
+          writer: "Proftbright",
+          image: "/Bright1.jpeg",
+          type: "image",
+          category: "Community",
+          date: "2025-07-10",
+          fullContent: (
+            <>
+              <Typography
+                variant="h5"
+                sx={{
+                  fontFamily: "'Roboto Slab', Georgia, serif",
+                  color: "#722F37",
+                  mb: 2,
+                  fontWeight: "bold",
+                  fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+                }}
+              >
+                Episode 2: The Flat Tire
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>By @proftbright | July 10, 2025</strong>
+              </Typography>
+              <Box sx={{ mb: 3, textAlign: "center" }}>
+                <img
+                  src="/Bright1.jpeg"
+                  alt="Episode 2: The Flat Tire"
+                  style={{
+                    width: "100%",
+                    maxWidth: "600px",
+                    height: "auto",
+                    borderRadius: "10px",
+                    boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+                  }}
+                />
+              </Box>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                The sun was harsh that afternoon, painting the cracked road in heat waves. Kelechi had just finished another
+                three-hour stretch at the cyber café, eyes sore from the blue light, heart sore from hunger. But his trouser
+                was still sharply ironed, like a soldier's uniform. He walked tall, sweat on his back, hope in his chest.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                Then he saw her — a woman pacing beside a black SUV with a flat tire.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                Everyone watched but no one moved.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                Kelechi hesitated for a second, then stepped forward.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                "Ma, you need help?"
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                She turned. Sharp eyes. Neatly tied gele. No-nonsense energy.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                "You know how to fix a tire?" she asked, raising a brow.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                "I can try."
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                And he did. Quietly, carefully, using tools from her trunk. She watched not just his hands, but his posture.
+                How he didn't flinch when his shirt got dusty. How he didn't talk too much. How he smiled when it was done.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                "What's your name?" she finally asked.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                "Kelechi."
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                "What do you do?"
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                "I'm learning design… graphics and web. Still learning."
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                She looked at him for a long second, then reached into her bag and brought out a business card.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                "Come to this address on Monday. 10 a.m. Tell the secretary Madam Fola sent you."
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                Before he could say thank you, she was already behind the wheel, driving off.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                He stared at the card.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                It was real.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                Everything in him wanted to jump, scream, dance.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                But instead, he folded the card with care, slipped it into his pocket, and smiled.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                Let them laugh.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                They didn't see this one coming.
+              </Typography>
+            </>
+          ),
+        },
+        {
+          id: 2,
+          title: "Sign CEO Xin Yan Shares Vision and Philosophy in Comprehensive AMA Discussion",
+          summary:
+            "A detailed discussion covering Sign's evolution, blockchain philosophy, and vision for digital sovereignty and infrastructure.",
+          writer: "Sign Team",
+          image: "/Farm1.jpeg",
+          type: "image",
+          category: "Blockchain",
+          date: "2025-07-08",
+          fullContent: (
+            <>
+              <Typography
+                variant="h5"
+                sx={{
+                  fontFamily: "'Roboto Slab', Georgia, serif",
+                  color: "#722F37",
+                  mb: 2,
+                  fontWeight: "bold",
+                  fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+                }}
+              >
+                Sign CEO Xin Yan Shares Vision and Philosophy in Comprehensive AMA Discussion
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>By Sign Team | July 8, 2025</strong>
+              </Typography>
+              <Box sx={{ mb: 3, textAlign: "center" }}>
+                <img
+                  src="/Farm1.jpeg"
+                  alt="Sign CEO AMA Discussion"
+                  style={{
+                    width: "100%",
+                    maxWidth: "600px",
+                    height: "auto",
+                    borderRadius: "10px",
+                    boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+                  }}
+                />
+              </Box>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>Introduction</strong>
+                <br />
+                Mr. Xin Yan introduced himself as the co-founder and CEO of Sign, with experience in crypto investment since
+                2017. Sign is a blockchain technology company with a strong community in the Philippines.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>Background and Motivation</strong>
+                <br />
+                Mr. Yan shared his early interest in hardware and electronic engineering, driven by a passion to build
+                innovative tech. He shifted focus to blockchain due to its potential for broad impact beyond hardware,
+                especially in improving societal coordination.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                He emphasized the importance of digital sovereignty and blockchain's role in providing a fair, transparent,
+                and global currency, contrasting it with the US dollar's dominance and geopolitical implications. Blockchain
+                is seen not just as hard tech, but as tech involving coordination and fairness.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>Influential Books</strong>
+                <br />
+                Mr. Yan recommended "Sapiens: A Brief History of Humankind" by Yuval Noah Harari for its historical insights
+                into humanity. He also recommended "The Contrarian" by Peter Thiel for its unique and practical
+                perspectives.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>Overview of Sign and Its Vision</strong>
+                <br />
+                Sign focuses on blockchain-based signature generation and verification. The company's flagship product is
+                TokenTable, a token distribution platform holding approximately 60% market share, servicing major wallets
+                and exchanges.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                Sign is transitioning from a Web3 product company to a digital infrastructure provider for nations. Current
+                projects include building digital IDs, payment systems, stablecoins, CBDCs, welfare distribution, land
+                titling, and more. Partnerships with six countries are underway, with pilot projects launching soon.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                Sign aims to offer turnkey digital infrastructure solutions akin to infrastructure construction companies
+                building bridges and roads, but digitally. They also emphasize community-building with the "Orange Dynasty"
+                global community sharing the vision of money, freedom, and integrity.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>Use Cases and Technological Insights</strong>
+                <br />
+                Digital ID is crucial for ensuring citizen voting rights anonymously and verifiably. Sign uses layer-2
+                solutions built on public blockchains like Ethereum or BNB Chain for security, flexibility, and sovereign
+                control.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                TokenTable's existing infrastructure can scale to billions of wallets, enabling national distributions like
+                Universal Basic Income (UBI) via smart contracts efficiently. Blockchain's ability to securely and privately
+                verify ID data protects privacy, avoiding surveillance creep via encryption and zero-knowledge proofs.
+              </Typography>
+            </>
+          ),
+        },
+        {
+          id: 3,
+          title: "Deep Dive: Sign's Evolution from Token Distribution to National Infrastructure",
+          summary:
+            "Comprehensive analysis of Sign's business model transformation, revenue streams, and strategic positioning in the evolving crypto landscape.",
+          writer: "Sign Team",
+          image: "/Farm2.jpeg",
+          type: "image",
+          category: "Business",
+          date: "2025-07-05",
+          fullContent: (
+            <>
+              <Typography
+                variant="h5"
+                sx={{
+                  fontFamily: "'Roboto Slab', Georgia, serif",
+                  color: "#722F37",
+                  mb: 2,
+                  fontWeight: "bold",
+                  fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+                }}
+              >
+                Deep Dive: Sign's Evolution from Token Distribution to National Infrastructure
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>By Sign Team | July 5, 2025</strong>
+              </Typography>
+              <Box sx={{ mb: 3, textAlign: "center" }}>
+                <img
+                  src="/Farm2.jpeg"
+                  alt="Sign Business Evolution"
+                  style={{
+                    width: "100%",
+                    maxWidth: "600px",
+                    height: "auto",
+                    borderRadius: "10px",
+                    boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+                  }}
+                />
+              </Box>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>Business Focus: From Token Table to National Infrastructure</strong>
+                <br />
+                <strong>Products Overview:</strong>
+                <br />• Token Table: Core income source involving token issuance and distribution
+                <br />• Climb: Other token claim tools for projects
+                <br />• National Infrastructure Services: An emerging, revenue-stable segment involving blockchain solutions
+                for nation-level applications
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>National Infrastructure</strong>
+                <br />
+                Motivation: Recognizing Web3 is not ready to fully replace Web2; instead focus on unique value in
+                traditional industries. Developed a framework integrating:
+                <br />• Layer 2 Blockchain: Secure, flexible, customizable blockchain infrastructure replacing traditional
+                permissioned chains
+                <br />• Digital Identity (DID): Verification of identity to enable differentiated services (e.g.,
+                citizenship, banking status)
+                <br />• Stablecoins: For in-chain sovereign currency, enabling on-chain governance and transactions
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                Use cases include welfare distribution (government subsidies, basic income, pensions), land registration,
+                corporate registration, and voting. The system enables transparency and efficiency improvements compared to
+                traditional government systems.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>Modular and Customizable Solutions</strong>
+                <br />
+                The framework is modular and plug-and-play. It can integrate with existing national ID systems or offer new
+                ones. Works with various stablecoins and chains depending on the country's needs.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>Pricing and Contract Model</strong>
+                <br />
+                Pricing model based on country's population, charging a fixed annual fee (e.g., $1 per person per year).
+                Contracts usually span 5 years or more. National infrastructure revenue is a growing part, potentially
+                exceeding Token Table revenue as it matures.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>Current and Prospective Clients</strong>
+                <br />
+                Actively cooperating countries: Thailand, Belarus, Sierra Leone, Abu Dhabi, Kyrgyzstan, etc. (some
+                confidential). Business development (BD) is complex, relying heavily on referrals from investors and
+                diplomatic connections.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                BD requires multi-layer engagement: top-down (government leaders) and bottom-up (staff executing projects)
+                approaches for success. Binance and other exchanges are important partners and sources of referrals.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>Community and User Base</strong>
+                <br />
+                <strong>Geographic Focus:</strong> Main active user communities are in developing regions: Nigeria, India,
+                Philippines. Western/US communities are smaller and harder to engage. The community is organized into tribes
+                aligned around country origin and roles within the virtual society.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "'Open Sans', Helvetica, sans-serif",
+                  mb: 2,
+                  lineHeight: 1.6,
+                  fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+                }}
+              >
+                <strong>Virtual Society Model</strong>
+                <br />
+                Built around Sign's Super App, which serves as a "townhall" where users interact. Incorporates token
+                economy, reputation scores, roles, and gamification. Inspired by successful gaming projects and other
+                community-centric projects. The goal is to build a sustainable, engaged community beyond just trading or
+                farming tokens.
+              </Typography>
+            </>
+          ),
+        },
     {
       id: 1,
       title: "Sign CEO Unveils Bold Vision for Blockchain Civilization at Danjo Capital AMA",
