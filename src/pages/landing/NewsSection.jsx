@@ -57,167 +57,168 @@ const NewsSection = () => {
 
   const newsData = [
   {
-    id: 7,
-    title: "Sign Protocol Surpasses 8 Million Attestations as New Developments Unfold",
-    summary:
-      "In a major milestone for decentralized identity systems, Sign Protocol has officially surpassed 8 million attestations, further solidifying its position as a leader in the onchain identity space.",
-    writer: "Sign Team",
-    image: "/Just2.jpeg",
-    type: "image",
-    category: "Blockchain",
-    date: "2025-07-15",
-    fullContent: (
-      <>
-        <Typography
-          variant="h5"
-          sx={{
-            fontFamily: "'Roboto Slab', Georgia, serif",
-            color: "#722F37",
-            mb: 2,
-            fontWeight: "bold",
-            fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+  id: 7,
+  title: "Sign Protocol Surpasses 8 Million Attestations as New Developments Unfold",
+  summary:
+    "In a major milestone for decentralized identity systems, Sign Protocol has officially surpassed 8 million attestations, further solidifying its position as a leader in the onchain identity space.",
+  writer: "Sign Team",
+  image: "/Just2.jpeg",
+  type: "image",
+  category: "Blockchain",
+  date: "2025-07-15",
+  fullContent: (
+    <>
+      <Typography
+        variant="h5"
+        sx={{
+          fontFamily: "'Roboto Slab', Georgia, serif",
+          color: "#722F37",
+          mb: 2,
+          fontWeight: "bold",
+          fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+        }}
+      >
+        Sign Protocol Surpasses 8 Million Attestations as New Developments Unfold
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{
+          fontFamily: "'Open Sans', Helvetica, sans-serif",
+          mb: 2,
+          lineHeight: 1.6,
+          fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+        }}
+      >
+        <strong>By Sign Team | July 15, 2025</strong>
+      </Typography>
+      <Box sx={{ mb: 3, textAlign: "center", backgroundColor: "#f0f0f0" }}>
+        <img
+          src="/Just2.jpeg" // Use the same image as the card
+          alt="Sign Protocol Surpasses 8 Million Attestations"
+          style={{
+            width: "100%",
+            maxWidth: "600px",
+            height: "auto",
+            borderRadius: "10px",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
           }}
-        >
-          Sign Protocol Surpasses 8 Million Attestations as New Developments Unfold
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "'Open Sans', Helvetica, sans-serif",
-            mb: 2,
-            lineHeight: 1.6,
-            fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
-          }}
-        >
-          <strong>By Sign Team | July 15, 2025</strong>
-        </Typography>
-        <Box sx={{ mb: 3, textAlign: "center" }}>
-          <img
-            src="/Just1.jpeg"
-            alt="Sign Protocol Surpasses 8 Million Attestations"
-            style={{
-              width: "100%",
-              maxWidth: "600px",
-              height: "auto",
-              borderRadius: "10px",
-              boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
-            }}
-          />
-        </Box>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "'Open Sans', Helvetica, sans-serif",
-            mb: 2,
-            lineHeight: 1.6,
-            fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
-          }}
-        >
-          In a major milestone for decentralized identity systems, Sign Protocol has officially surpassed 8 million
-          attestations, further solidifying its position as a leader in the onchain identity space. The announcement
-          came during a recent community update by one of Sign’s core team members, Claire, fondly known as the “Product
-          Queen” within the Sign community.
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "'Open Sans', Helvetica, sans-serif",
-            mb: 2,
-            lineHeight: 1.6,
-            fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
-          }}
-        >
-          According to Claire, the 8 million attestations have been made across more than 10 different networks, marking
-          a significant leap in adoption and demonstrating the cross-chain power and growing influence of the Sign
-          Protocol.
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "'Open Sans', Helvetica, sans-serif",
-            mb: 2,
-            lineHeight: 1.6,
-            fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
-          }}
-        >
-          During the session, Claire provided a glimpse into the broader vision of Sign, sharing exciting details about
-          the infrastructure being built behind the scenes. She explained that Sign is developing a{" "}
-          <strong>
-            powerful onchain ID system, one that enables users to attest to real-world, government-issued documents and
-            unlock various services
-          </strong>{" "}
-          across the decentralized world. This system represents a pivotal shift in how digital identity is approached,
-          offering individuals the ability to take control of their identity data and store it securely on the
-          blockchain.
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "'Open Sans', Helvetica, sans-serif",
-            mb: 2,
-            lineHeight: 1.6,
-            fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
-          }}
-        >
-          What sets this system apart is the use of attestations, verified claims issued by recognized authorities, such
-          as governments. Through these attestations, users can connect official documents like passports or driver’s
-          licenses to their onchain identity, creating a secure, transparent, and user-controlled digital profile.
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "'Open Sans', Helvetica, sans-serif",
-            mb: 2,
-            lineHeight: 1.6,
-            fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
-          }}
-        >
-          Claire also shared updates on Sign’s latest innovations around news integrations using schema hooks. This new
-          feature allows attestations to trigger smart contract actions, seamlessly blending structured data and
-          blockchain technology. Essentially, it’s a move toward more automated, event-driven workflows, where verified
-          claims instantly set smart contracts into motion. This integration is designed to simplify and accelerate
-          onchain interactions, opening doors to more sophisticated decentralized applications and services.
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "'Open Sans', Helvetica, sans-serif",
-            mb: 2,
-            lineHeight: 1.6,
-            fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
-          }}
-        >
-          The Sign community responded with enthusiasm to the announcements, celebrating both the milestone and the
-          ambitious direction the platform is heading toward.
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "'Open Sans', Helvetica, sans-serif",
-            mb: 2,
-            lineHeight: 1.6,
-            fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
-          }}
-        >
-          As the blockchain space continues to evolve, Sign Protocol’s work in decentralized identity and attestation
-          infrastructure is emerging as a cornerstone of future onchain systems. With millions of attestations already
-          recorded and innovation pushing forward at full speed, Sign is proving to be a key player in shaping a
-          trust-based, decentralized internet.
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "'Open Sans', Helvetica, sans-serif",
-            mb: 2,
-            lineHeight: 1.6,
-            fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
-          }}
-        >
-          Stay tuned for more updates as Sign continues to build the foundation for an open, verifiable, and user-first
-          identity system across Web3….
-        </Typography>
-      </>
-    ),
+          onError={() => console.error("Failed to load image: /Just2.jpeg")}
+        />
+      </Box>
+      <Typography
+        variant="body1"
+        sx={{
+          fontFamily: "'Open Sans', Helvetica, sans-serif",
+          mb: 2,
+          lineHeight: 1.6,
+          fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+        }}
+      >
+        In a major milestone for decentralized identity systems, Sign Protocol has officially surpassed 8 million
+        attestations, further solidifying its position as a leader in the onchain identity space. The announcement
+        came during a recent community update by one of Sign’s core team members, Claire, fondly known as the “Product
+        Queen” within the Sign community.
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{
+          fontFamily: "'Open Sans', Helvetica, sans-serif",
+          mb: 2,
+          lineHeight: 1.6,
+          fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+        }}
+      >
+        According to Claire, the 8 million attestations have been made across more than 10 different networks, marking
+        a significant leap in adoption and demonstrating the cross-chain power and growing influence of the Sign
+        Protocol.
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{
+          fontFamily: "'Open Sans', Helvetica, sans-serif",
+          mb: 2,
+          lineHeight: 1.6,
+          fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+        }}
+      >
+        During the session, Claire provided a glimpse into the broader vision of Sign, sharing exciting details about
+        the infrastructure being built behind the scenes. She explained that Sign is developing a{" "}
+        <strong>
+          powerful onchain ID system, one that enables users to attest to real-world, government-issued documents and
+          unlock various services
+        </strong>{" "}
+        across the decentralized world. This system represents a pivotal shift in how digital identity is approached,
+        offering individuals the ability to take control of their identity data and store it securely on the
+        blockchain.
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{
+          fontFamily: "'Open Sans', Helvetica, sans-serif",
+          mb: 2,
+          lineHeight: 1.6,
+          fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+        }}
+      >
+        What sets this system apart is the use of attestations, verified claims issued by recognized authorities, such
+        as governments. Through these attestations, users can connect official documents like passports or driver’s
+        licenses to their onchain identity, creating a secure, transparent, and user-controlled digital profile.
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{
+          fontFamily: "'Open Sans', Helvetica, sans-serif",
+          mb: 2,
+          lineHeight: 1.6,
+          fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+        }}
+      >
+        Claire also shared updates on Sign’s latest innovations around news integrations using schema hooks. This new
+        feature allows attestations to trigger smart contract actions, seamlessly blending structured data and
+        blockchain technology. Essentially, it’s a move toward more automated, event-driven workflows, where verified
+        claims instantly set smart contracts into motion. This integration is designed to simplify and accelerate
+        onchain interactions, opening doors to more sophisticated decentralized applications and services.
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{
+          fontFamily: "'Open Sans', Helvetica, sans-serif",
+          mb: 2,
+          lineHeight: 1.6,
+          fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+        }}
+      >
+        The Sign community responded with enthusiasm to the announcements, celebrating both the milestone and the
+        ambitious direction the platform is heading toward.
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{
+          fontFamily: "'Open Sans', Helvetica, sans-serif",
+          mb: 2,
+          lineHeight: 1.6,
+          fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+        }}
+      >
+        As the blockchain space continues to evolve, Sign Protocol’s work in decentralized identity and attestation
+        infrastructure is emerging as a cornerstone of future onchain systems. With millions of attestations already
+        recorded and innovation pushing forward at full speed, Sign is proving to be a key player in shaping a
+        trust-based, decentralized internet.
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{
+          fontFamily: "'Open Sans', Helvetica, sans-serif",
+          mb: 2,
+          lineHeight: 1.6,
+          fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.05rem" },
+        }}
+      >
+        Stay tuned for more updates as Sign continues to build the foundation for an open, verifiable, and user-first
+        identity system across Web3….
+      </Typography>
+    </>
+  ),
   },
   // ... (the rest of the newsData array remains unchanged)
   {
