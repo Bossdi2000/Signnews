@@ -227,7 +227,7 @@ const NewsSection = () => {
     summary:
       "Kelechi's journey continues as a simple act of kindness leads to an unexpected opportunity that could change everything.",
     writer: "Proftbright",
-    image: "/Bright1.jpeg",
+    image: "/Just1.jpeg",
     type: "image",
     category: "Community",
     date: "2025-07-10",
