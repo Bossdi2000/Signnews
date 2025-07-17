@@ -56,6 +56,154 @@ const NewsSection = () => {
   }
 
   const newsData = [
+    {
+    id: 9,
+    title: "Sign Intern Reveals Key Features and Updates as Sign App Enters Testing Phase for Serious Builders.",
+    summary:
+      "On Wednesday, July 16th, the Sign community was treated to an exciting update during a Twitter Space hosted by the Sign Intern, who revealed a detailed look into the highly anticipated Sign App and its ongoing development.",
+    writer: "Sign Team",
+    image: "/Hemy1.jpeg",
+    type: "image",
+    category: "Blockchain",
+    date: "2025-07-16",
+    fullContent: (
+      <>
+        <h2 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-xl sm:text-2xl md:text-3xl">
+          Sign Intern Reveals Key Features and Updates as Sign App Enters Testing Phase for Serious Builders.
+        </h2>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <strong>Published: Wednesday, July 16.</strong>
+        </p>
+        <div className="mb-6 text-center bg-gray-100 p-4 rounded-lg">
+          <img
+            src="/Hemy1.jpeg"
+            alt="Sign Intern Reveals Key Features and Updates as Sign App Enters Testing Phase for Serious Builders."
+            className="w-full max-w-[600px] h-auto rounded-lg shadow-md mx-auto"
+            onError={() => console.error("Failed to load image: /Hemy1.jpeg")}
+          />
+        </div>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          On Wednesday, July 16th, the Sign community was treated to an exciting update during a Twitter Space hosted by
+          the Sign Intern, who revealed a detailed look into the highly anticipated Sign App and its ongoing
+          development.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          The intern officially announced that the app will be called <strong>“Orange Dynasty”</strong>, a name chosen
+          to represent the strength, unity, and vibrant spirit of the Sign community. She emphasized that the app is
+          built not just as a social platform, but as a community-first ecosystem focused on rewarding meaningful
+          engagement and positive contributions.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          One of the core functionalities of the app includes the integration of <strong>X</strong>. By connecting their
+          X accounts, users will be able to earn “oranges”, a form of community reward points, for every comment, reply,
+          post, or Sign-related content they share. These oranges reflect a user’s activity and influence within the
+          Sign space. More importantly, the intern highlighted the significance of vouching for others and gifting
+          oranges, stating that the platform strongly discourages negative interactions or reviews. The app also
+          includes a leaderboard, currently tracking users with the most oranges, but this will soon shift focus to
+          highlight those who gift the most promoting generosity and recognition within the network.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          In terms of rollout, the intern shared a detailed multi-phase testing plan. The current phase is focused on
+          private testing for serious builders, allowing early contributors to explore the platform and provide
+          feedback. This will be followed by a private testing round for all SBT holders, and eventually open up to
+          everyone who has interacted with Sign, including those who have engaged through posts, content creation, IRL
+          events, and other forms of community participation.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          She also disclosed that the app is currently undergoing validation and review by Apple for its iOS version,
+          signaling that a broader release is near. Addressing comparisons to existing platforms like X, the intern
+          clarified that Sign is not attempting to replicate those models. Instead, the goal is to create something
+          uniquely different, blending social interaction with gamified experiences, including exciting additions like a
+          dating section and karaoke features designed to bring people closer in fun and creative ways.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Another major feature is <strong>ZK-proof (zero-knowledge proof)</strong> verification, enabling users to
+          verify aspects of their identity or on-chain activity securely. The app will also allow wallet connections for
+          users to verify their holdings of SIGN NFTs, SIGN Tokens, and SIGN SBTs, integrating identity, ownership, and
+          participation into one seamless experience.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Feedback from Sign <strong>OGs who have tested the app</strong> has been overwhelmingly positive, with many
+          praising its user experience and expressing excitement for what’s to come. As Sign moves through these
+          development phases, the anticipation for the public release continues to grow.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          With the Orange Dynasty, Sign is not just launching an app, it’s building a new digital space where community,
+          creativity, and trust come together. Stay tuned for more about related updates.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <em>News credit: JUST_Hemmy (Sign caster)</em>
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 8,
+    title:
+      "TokenTable Distributes Major Airdrops to Two Leading Web3 Communities, Reinforces Its Role as Transparent On-Chain Allocation Pioneer.",
+    summary:
+      "In a notable advancement that highlights its growing influence in the Web3 space, TokenTable, one of the featured ecosystems of Sign has once again demonstrated its commitment to transparency and community empowerment.",
+    writer: "Sign Team",
+    image: "/Hemy2.jpeg",
+    type: "image",
+    category: "Blockchain",
+    date: "2025-07-15",
+    fullContent: (
+      <>
+        <h2 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-xl sm:text-2xl md:text-3xl">
+          TokenTable Distributes Major Airdrops to Two Leading Web3 Communities, Reinforces Its Role as Transparent
+          On-Chain Allocation Pioneer.
+        </h2>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <strong>Published: Tuesday, July 15</strong>
+        </p>
+        <div className="mb-6 text-center bg-gray-100 p-4 rounded-lg">
+          <img
+            src="/Hemy2.jpeg"
+            alt="TokenTable Distributes Major Airdrops to Two Leading Web3 Communities, Reinforces Its Role as Transparent On-Chain Allocation Pioneer."
+            className="w-full max-w-[600px] h-auto rounded-lg shadow-md mx-auto"
+            onError={() => console.error("Failed to load image: /Hemy2.jpeg")}
+          />
+        </div>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          In a notable advancement that highlights its growing influence in the Web3 space, <strong>TokenTable</strong>,
+          one of the featured ecosystems of <strong>Sign</strong> has once again demonstrated its commitment to
+          transparency and community empowerment. On Tuesday, July 15, TokenTable successfully executed a major airdrop
+          campaign for not one, but two prominent Web3 projects, distributing tokens directly to their communities in a
+          seamless and secure process.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Built as a comprehensive solution for token distribution, vesting, and on-chain allocation,{" "}
+          <strong>TokenTable</strong> is fast becoming the go-to infrastructure for Web3 teams looking to launch and
+          scale with clarity. With its intuitive dashboard, secure delivery mechanisms, and emphasis on transparency,{" "}
+          <strong>TokenTable</strong> ensures that every allocation from investor vesting to public airdrops is fully
+          trackable and accessible on-chain.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          This latest airdrop underscores TokenTable’s bold vision: to remove the opacity and friction that typically
+          accompany token distribution in decentralized ecosystems. By facilitating drops for two major Web3 projects in
+          a single day, <strong>TokenTable</strong> not only proved the scalability of its protocol but also reaffirmed
+          its mission to put communities first, rewarding engagement and participation with verifiable ownership.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          More than just a tool, <strong>TokenTable</strong> is shaping the future of community tokenomics. As more
+          builders turn to it to manage complex allocations, it continues to raise the bar for what responsible and
+          community-aligned token distribution should look like in Web3.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          With this latest achievement, TokenTable cements its role as a trusted partner in the Sign ecosystem and a
+          critical pillar for the evolving decentralized economy.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Stay tuned for further updates as TokenTable continues to unlock new chapters in transparent token
+          infrastructure.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <em>News credit: JUST_Hemmy (Sign caster)</em>
+        </p>
+      </>
+    ),
+  },
   {
   id: 7,
   title: "Sign Protocol Surpasses 8 Million Attestations as New Developments Unfold",
