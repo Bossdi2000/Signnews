@@ -58,6 +58,320 @@ const NewsSection = () => {
   const newsData = [
     {
     id: 9,
+    title: "Open Conspiracy: How to Send $SIGN to $1",
+    summary:
+      "Welcome to the open conspiracy. If you’re holding $SIGN, whether it's spot, staked, or you hold a long position on perp, this article is for you. This isn’t financial advice. This is memetic warfare. A battle for consensus. A mission to make $SIGN = $1.",
+    writer: "Xin(shin)Yan 闞欣",
+    image: "/SOB1.jpeg",
+    type: "image",
+    category: "Blockchain",
+    date: "2025-07-18",
+    fullContent: (
+      <>
+        <h2 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-xl sm:text-2xl md:text-3xl">
+          Open Conspiracy: How to Send $SIGN to $1
+        </h2>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <strong>Originally written by:</strong> Xin(shin)Yan 闞欣, July 18, 2025
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <strong>For $SIGN Holders Only</strong>
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Welcome to the open conspiracy. If you’re holding $SIGN, whether it's spot, staked, or you hold a long
+          position on perp, this article is for you. This isn’t financial advice. This is memetic warfare. A battle for
+          consensus. A mission to make $SIGN = $1.
+        </p>
+        <h3 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-lg sm:text-xl md:text-2xl">
+          I. First Principles
+        </h3>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          1. All value is memetic, based purely on shared conviction.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Let me explain a bit more.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          It’s counterintuitive, but the price of things you can’t directly use isn’t determined by fundamentals. It’s
+          shaped by belief, by narrative, by collective conviction.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          $SIGN, like everything else — from USD to BTC to Nvidia’s $4T valuation — is worth what we believe it’s worth.
+          That number? It doesn’t hold any intrinsic meaning anymore. $4T could theoretically buy 16 years of global
+          rice production… but deep down, we all know it never will.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          ————————————————————————————-
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          2. All $SIGN holders must coordinate better for our shared vision.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          $SIGN has bound us together, socially and financially. If you’ve chosen to hold $SIGN and retire in the next
+          180 days, then passive holding isn’t enough. Here’s what I think everyone in this group should do.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          —————————————————————————————
+        </p>
+        <h3 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-lg sm:text-xl md:text-2xl">
+          II. What the Community Must Do
+        </h3>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">1. Stake your $SIGN!</p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          The goal is to stake 50% circulating supply -&gt;{" "}
+          <a href="https://stake.sign.global/" className="text-blue-600 hover:underline">
+            https://stake.sign.global/
+          </a>
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Simple math: the more that’s staked, the less that floats. Less float = more squeeze. Shorters will fear us.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Staking is a sign of your faith in $SIGN, a sacrifice of liquidity for long-term belief. To reward that
+          loyalty, we’re using unclaimed airdrops to create a reward pool with 10% fixed yield plus a special Orange
+          Hand badge of honor. In the Orange Dynasty, we will make sure you stand out.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          —————————————————————————————
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">2. Study SIGN.</p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Make sure you understand this:
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Our vision is to reclaim money, freedom, and integrity for all humans.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          ———————————————————————————
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          We’re a team of tech experts and community fanatics, building the best blockchain infrastructure and
+          applications for futuristic nation-states and rising communities. Meet the team here:{" "}
+          <a href="https://x.com/sign/status/1924174246810423702?s=46" className="text-blue-600 hover:underline">
+            https://x.com/sign/status/1924174246810423702?s=46
+          </a>
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          —————————————————————————————————
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Sign started 4 years ago, backed by $40M in funding from top players like Sequoia Capital, CZ, and Circle.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          We’re post-revenue, the runway lasts forever. We’re not here to sell tokens, we’re here to go big.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          ———————————————————————————
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          3. Join Orange Dynasty.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          We started Orange Dynasty to imagine a global society bound by ideas, not borders. The upcoming community app
+          is our townhall:{" "}
+          <a href="https://x.com/ethsign/status/1945834242623361228?s=46" className="text-blue-600 hover:underline">
+            https://x.com/ethsign/status/1945834242623361228?s=46
+          </a>
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          The cultural engine. A channel for democratizing best services and assets. The frontline of the memetic war.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          ———————————————————————————
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">4. Recruit 3 frens.</p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">Not shill. Recruit.</p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Bring them in for the vision, the culture, the upside. We’ve designed a special badge of honor, Orange in My
+          Veins, to recognize those who recruit for Orange Dynasty, who build their own cabal, their own clan within the
+          movement.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Belief scales through orange-pilled people.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          ———————————————————————————-
+        </p>
+        <h3 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-lg sm:text-xl md:text-2xl">
+          III. What the Core Team Must Do
+        </h3>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">1. Lead and expand.</p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Just like a DJ controls the rhythm of the club, the core team leads the community through the market. We’re in
+          a war against every altcoin for liquidity and attention.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          The core team’s role is to deliver clear messages, strong signals to the community and to align incentives
+          with every partner helping us reach our mission.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          We will use technology and connections to penetrate every capital market — crypto or stock, retail or
+          institutional.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          We will build communities across Asia, Europe, and North America, in every language.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          2. Build real products.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Real products are defined by two things: revenue or organic growth.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          The core team must stay focused on market research and solving real problems. We’ve already built many, and we
+          will build more.{" "}
+          <a href="https://x.com/tokentable/status/1930459761864257837?s=46" className="text-blue-600 hover:underline">
+            https://x.com/tokentable/status/1930459761864257837?s=46
+          </a>
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          ————————————————————————————
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">3. Self sustain.</p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          The core team (dev company) should generate enough revenue to be self-sustaining, without relying on
+          Foundation funding. This ensures that the Foundation’s token allocation can be reserved solely for recruiting
+          top talent and long-term contributors.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          4. Create strong content to win attention.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Attention and recognition is all we need.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          I have to admit, we’ve been heads down building, and haven’t spent enough time on content. A lot of exciting
+          and important messages have gone out as just plain text tweets.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          I realized video is the most powerful language on the internet now. People want to see us, see the product,
+          and feel the vibe.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          We’re now hiring a Chief Content Officer.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          If you understand what we’re building and think you’re the right fit, DM me.
+        </p>
+        <h3 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-lg sm:text-xl md:text-2xl">
+          IV. The Final Truth
+        </h3>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Value is artificial. Nvidia is worth $4T, but that doesn’t mean it owns $4T worth of cows, gold, or real
+          estate. It means people believe in the mission, in the upside.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          __________________________________—————————
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          With $SIGN, we have the rarest combo:
+        </p>
+        <ul className="list-disc list-inside font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <li>real business</li>
+          <li>widely listed token</li>
+          <li>fanatical, global community</li>
+        </ul>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          We don’t need to wait for the market to tell us what we’re worth. We decide. Together.
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <em>Credit: The article was originally published on X and written by Xin(Shin)Yan</em>
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Twitter handle:{" "}
+          <a href="https://x.com/realyanxin" className="text-blue-600 hover:underline">
+            @realyanxin
+          </a>
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 8,
+    title: "SignPass Project Update: Residency, NFT Access, and Orange Dynasty Integration",
+    summary:
+      "In a newly released update, the team behind SignPass has shared important developments regarding the project’s direction, NFT availability, residency offerings, and upcoming integrations into the growing Orange Dynasty ecosystem.",
+    writer: "Sign News Desk",
+    image: "/SOB2.jpeg",
+    type: "image",
+    category: "Blockchain",
+    date: "2025-07-19",
+    fullContent: (
+      <>
+        <h2 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-xl sm:text-2xl md:text-3xl">
+          SignPass Project Update: Residency, NFT Access, and Orange Dynasty Integration
+        </h2>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <strong>Published: July 19, 2025</strong>
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <em>Sign News Desk</em>, In a newly released update, the team behind SignPass has shared important
+          developments regarding the project’s direction, NFT availability, residency offerings, and upcoming
+          integrations into the growing Orange Dynasty ecosystem.
+        </p>
+        <h3 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-lg sm:text-xl md:text-2xl">
+          Minting Paused for SignPass NFTs
+        </h3>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Effective immediately, minting of new SignPass NFTs has been paused. This means no new SignPass NFTs can be
+          purchased or created at this time. The team did not provide a date for resumption but emphasized the
+          importance of regulatory alignment and system upgrades.
+        </p>
+        <h3 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-lg sm:text-xl md:text-2xl">
+          Residency & Physical Certificates
+        </h3>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          Holders of the SignPass NFT are still eligible for residency in Sierra Leone, which includes both an onchain
+          certificate and a physical document. However, the issuance of new physical IDs is temporarily on hold as the
+          government finalizes national standards for residency card issuance.
+        </p>
+        <h3 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-lg sm:text-xl md:text-2xl">
+          Orange Dynasty: Exclusive Access for SignPass Holders
+        </h3>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          In a strategic move, all current SignPass NFT holders will be granted priority access to the Orange Dynasty
+          app, including internal testing phases and upcoming reward-based features. To join the waitlist, holders are
+          encouraged to visit{" "}
+          <a href="https://orange.sign.global" className="text-blue-600 hover:underline">
+            orange.sign.global
+          </a>{" "}
+          and verify their eligibility by submitting their wallet address and indicating their NFT ownership.
+        </p>
+        <h3 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-lg sm:text-xl md:text-2xl">
+          Crypto Card Update
+        </h3>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          As part of ongoing platform evolution, the team is exploring the integration of crypto card services into the
+          Orange Dynasty app. For those already using the Fiat24 crypto card:
+        </p>
+        <ul className="list-disc list-inside font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <li>No new cards will be issued going forward</li>
+          <li>Current users may continue using their cards without interruption</li>
+          <li>Transaction fee rebates previously available to SignPass users will be discontinued.</li>
+        </ul>
+        <h3 className="font-['Roboto_Slab'] text-[#722F37] mb-4 font-bold text-lg sm:text-xl md:text-2xl">
+          Continued Commitment
+        </h3>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          The Sign team expressed deep gratitude to the community, stating:
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <em>
+            “We appreciate your continued support and trust. As we enter the next phase of development, we remain
+            committed to transparency and delivering long-term value.”
+          </em>
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <strong>Source: SignPass</strong>
+        </p>
+        <p className="font-['Open_Sans'] mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+          <em>Reported by: JUST_Hemmy (Sign caster)</em> for Sign news and entertainment.
+        </p>
+      </>
+    ),
+  },
+    {
+    id: 9,
     title: "Sign Intern Reveals Key Features and Updates as Sign App Enters Testing Phase for Serious Builders.",
     summary:
       "On Wednesday, July 16th, the Sign community was treated to an exciting update during a Twitter Space hosted by the Sign Intern, who revealed a detailed look into the highly anticipated Sign App and its ongoing development.",
