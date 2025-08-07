@@ -58,49 +58,14 @@ const BUTTON_STYLES = {
   },
 }
 
-const ORANGE_BUTTON_STYLES = {
-  background: "linear-gradient(135deg, #FF8C42 0%, #FF6B1A 100%)",
-  border: "1px solid #FF8C42",
-  color: "#FFFFFF",
-  padding: "8px 16px",
-  borderRadius: "8px",
-  fontSize: "14px",
-  fontWeight: "600",
-  cursor: "pointer",
-  transition: "all 0.3s ease",
-  textTransform: "none",
-  "&:hover": {
-    background: "linear-gradient(135deg, #FF6B1A 0%, #FF8C42 100%)",
-    border: "1px solid #FF8C42",
-    boxShadow: "0 4px 16px rgba(255, 140, 66, 0.3)",
-    transform: "scale(1.02)",
-  },
-}
-const NAV_BUTTON_STYLES = {
-  background: "rgba(114, 47, 55, 0.1)",
-  border: "1px solid rgba(114, 47, 55, 0.3)",
-  color: "#FF8C42",
-  padding: "8px 16px",
-  borderRadius: "8px",
-  fontSize: "14px",
-  fontWeight: "600",
-  cursor: "pointer",
-  transition: "all 0.3s ease",
-  textTransform: "none",
-  "&:hover": {
-    background: "rgba(114, 47, 55, 0.2)",
-    border: "1px solid #722F37",
-    boxShadow: "0 4px 16px rgba(114, 47, 55, 0.2)",
-    color: "#FFFFFF",
-  },
-}
-
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [newsCount, setNewsCount] = useState("247")
   const [membersCount, setMembersCount] = useState("1,543")
   const theme = useTheme()
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"))
 
   const { scrollY } = useScroll()
   const [navbarBackground, setNavbarBackground] = useState("rgba(0, 0, 0, 0.7)")
@@ -136,7 +101,6 @@ const Navbar = () => {
     { name: "News", icon: <Newspaper size={16} />, href: "/news" },
     { name: "Entertainment", icon: <Gamepad2 size={16} />, href: "/entertainment" },
     { name: "Orange mic", icon: <Mic size={16} />, href: "https://orange-mic.vercel.app", special: true },
-    { name: "Article/Education", icon: <BookOpen size={16} />, href: "/article" },
     { name: "About", icon: <Info size={16} />, href: "/about" },
     { name: "Core Team", icon: <Users size={16} />, href: "/core-team" }
   ]
@@ -152,13 +116,13 @@ const Navbar = () => {
       exit={{ x: "100%" }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
       style={{
-        width: "280px",
+        width: isMobile ? "260px" : "280px",
         height: "100vh",
         background: DRAWER_GRADIENT,
-        padding: "24px",
+        padding: isMobile ? "16px" : "24px",
         display: "flex",
         flexDirection: "column",
-        gap: "16px",
+        gap: "12px",
         borderLeft: "2px solid #722F37",
       }}
     >
@@ -172,10 +136,11 @@ const Navbar = () => {
           sx={{
             my: 2,
             color: "#FF8C42",
-            marginBottom: "32px",
+            marginBottom: isMobile ? "20px" : "32px",
             textAlign: "center",
             fontWeight: "bold",
             textShadow: "0 0 10px rgba(255, 140, 66, 0.5)",
+            fontSize: isMobile ? "18px" : "20px",
           }}
         >
           SIGN-NEWS
@@ -185,8 +150,8 @@ const Navbar = () => {
       {/* Mobile stats */}
       <Box sx={{ display: "flex", flexDirection: "column", gap: "12px", mb: 2 }}>
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <Typography sx={{ color: "#888", fontSize: "14px" }}>News Articles</Typography>
-          <Typography sx={{ color: "#FF8C42", fontWeight: "600" }}>{newsCount}</Typography>
+          <Typography sx={{ color: "#888", fontSize: isMobile ? "12px" : "14px" }}>News Articles</Typography>
+          <Typography sx={{ color: "#FF8C42", fontWeight: "600", fontSize: isMobile ? "12px" : "14px" }}>{newsCount}</Typography>
         </Box>
       </Box>
 
@@ -204,9 +169,9 @@ const Navbar = () => {
                   background: "rgba(114, 47, 55, 0.1)",
                   border: "1px solid rgba(114, 47, 55, 0.2)",
                   color: item.special ? "#FFFFFF" : "#FF8C42",
-                  fontSize: "16px",
+                  fontSize: isMobile ? "14px" : "16px",
                   cursor: "pointer",
-                  padding: "12px 16px",
+                  padding: isMobile ? "10px 12px" : "12px 16px",
                   textAlign: "left",
                   borderRadius: "8px",
                   width: "100%",
@@ -248,9 +213,9 @@ const Navbar = () => {
               background: "rgba(114, 47, 55, 0.1)",
               border: "1px solid rgba(114, 47, 55, 0.2)",
               color: "#FF8C42",
-              padding: "12px 24px",
+              padding: isMobile ? "10px 20px" : "12px 24px",
               borderRadius: "8px",
-              fontSize: "16px",
+              fontSize: isMobile ? "14px" : "16px",
               fontWeight: "600",
               cursor: "pointer",
               transition: "all 0.3s ease",
@@ -265,7 +230,7 @@ const Navbar = () => {
               },
             }}
             onClick={() => window.open("https://x.com/0xsign_news", "_blank", "noopener,noreferrer")}
-            startIcon={<UserCheck size={18} />}
+            startIcon={<UserCheck size={isMobile ? 16 : 18} />}
             aria-label="Join Community"
           >
             Join Us
@@ -310,7 +275,8 @@ const Navbar = () => {
             maxWidth: "1400px",
             margin: "0 auto",
             width: "100%",
-            padding: "16px 24px",
+            padding: isMobile ? "4px 12px" : isDesktop ? "16px 24px" : "8px 16px",
+            minHeight: isMobile ? "48px" : isDesktop ? "64px" : "56px",
           }}
         >
           {/* Logo Section */}
@@ -318,15 +284,15 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: isMobile ? "6px" : isDesktop ? "16px" : "12px" }}>
               <Box
                 component="img"
                 src="/NLogo.jpeg"
                 alt="SIGN-NEWS Logo"
                 sx={{
-                  width: "48px",
-                  height: "48px",
-                  borderRadius: "12px",
+                  width: isMobile ? "28px" : isDesktop ? "48px" : "36px",
+                  height: isMobile ? "28px" : isDesktop ? "48px" : "36px",
+                  borderRadius: isMobile ? "6px" : isDesktop ? "12px" : "8px",
                   objectFit: "cover",
                   boxShadow: RED_SHADOW,
                   border: "2px solid rgba(114, 47, 55, 0.3)",
@@ -338,7 +304,7 @@ const Navbar = () => {
                   component="h1"
                   sx={{
                     margin: 0,
-                    fontSize: "24px",
+                    fontSize: isMobile ? "14px" : isDesktop ? "24px" : "18px",
                     fontWeight: "bold",
                     fontFamily: "'Roboto Slab', Georgia, serif",
                   }}
@@ -348,7 +314,7 @@ const Navbar = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: "12px",
+                    fontSize: isMobile ? "8px" : isDesktop ? "12px" : "10px",
                     color: "#FF8C42",
                     fontWeight: "500",
                     margin: 0,
@@ -364,27 +330,28 @@ const Navbar = () => {
                   background: "rgba(255, 140, 66, 0.2)",
                   color: "#FF8C42",
                   border: "1px solid rgba(255, 140, 66, 0.3)",
-                  fontSize: "11px",
+                  fontSize: isMobile ? "8px" : isDesktop ? "11px" : "9px",
                   fontWeight: "600",
+                  height: isMobile ? "18px" : isDesktop ? "24px" : "20px",
                 }}
               />
             </Box>
           </motion.div>
 
-          <Box sx={{ display: "flex", alignItems: "center", gap: "32px" }}>
-            {/* Stats Section - Only on Desktop */}
-            {isDesktop && (
-              <Box sx={{ display: "flex", gap: "24px", alignItems: "center" }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: isMobile ? "6px" : isDesktop ? "32px" : "16px" }}>
+            {/* Stats Section - Only on Desktop and Tablet */}
+            {!isMobile && (
+              <Box sx={{ display: "flex", gap: isDesktop ? "24px" : "16px", alignItems: "center" }}>
                 <motion.div whileHover={{ scale: 1.05 }}>
                   <Box sx={{ textAlign: "center" }}>
-                    <Typography sx={{ color: "#888", fontSize: "12px" }}>Articles</Typography>
-                    <Typography sx={{ color: "#FF8C42", fontWeight: "600", fontSize: "14px" }}>
+                    <Typography sx={{ color: "#888", fontSize: isDesktop ? "12px" : "10px" }}>Articles</Typography>
+                    <Typography sx={{ color: "#FF8C42", fontWeight: "600", fontSize: isDesktop ? "14px" : "12px" }}>
                       {newsCount}
                     </Typography>
                   </Box>
                 </motion.div>
                 <Badge
-                  badgeContent={<Activity size={12} />}
+                  badgeContent={<Activity size={isDesktop ? 12 : 10} />}
                   sx={{
                     "& .MuiBadge-badge": {
                       backgroundColor: "#FF8C42",
@@ -392,26 +359,28 @@ const Navbar = () => {
                     }
                   }}
                 >
-                  <Newspaper size={20} color="#FF8C42" />
+                  <Newspaper size={isDesktop ? 20 : 16} color="#FF8C42" />
                 </Badge>
               </Box>
             )}
 
-            {/* Join Us Button */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                variant="contained"
-                sx={BUTTON_STYLES}
-                onClick={() => window.open("https://x.com/0xsign_news", "_blank", "noopener,noreferrer")}
-                startIcon={<UserCheck size={18} />}
-                aria-label="Join Community"
+            {/* Join Us Button - Only on Desktop */}
+            {isDesktop && (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Join Us
-              </Button>
-            </motion.div>
+                <Button
+                  variant="contained"
+                  sx={BUTTON_STYLES}
+                  onClick={() => window.open("https://x.com/0xsign_news", "_blank", "noopener,noreferrer")}
+                  startIcon={<UserCheck size={18} />}
+                  aria-label="Join Community"
+                >
+                  Join Us
+                </Button>
+              </motion.div>
+            )}
 
             {/* Hamburger Menu - For All Screen Sizes */}
             <IconButton
@@ -422,14 +391,15 @@ const Navbar = () => {
               sx={{ 
                 color: "#FF8C42",
                 border: "1px solid rgba(255, 140, 66, 0.3)",
-                borderRadius: "8px",
+                borderRadius: isMobile ? "6px" : "8px",
+                padding: isMobile ? "6px" : "8px",
                 "&:hover": {
                   background: "rgba(255, 140, 66, 0.1)",
                   boxShadow: "0 4px 16px rgba(255, 140, 66, 0.2)",
                 }
               }}
             >
-              <Menu />
+              <Menu size={isMobile ? 20 : 24} />
             </IconButton>
           </Box>
         </Toolbar>
@@ -445,7 +415,7 @@ const Navbar = () => {
             sx={{
               "& .MuiDrawer-paper": {
                 boxSizing: "border-box",
-                width: "280px",
+                width: isMobile ? "260px" : "280px",
                 background: "transparent",
               },
               "& .MuiBadge-badge": {
