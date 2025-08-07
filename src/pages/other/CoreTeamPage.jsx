@@ -1,318 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Twitter, Globe, User, ChevronLeft, ChevronRight, Menu, Users, Newspaper, UserCheck, Activity, Home, Gamepad2, Mic, BookOpen, Info } from 'lucide-react';
+"use client"
 
-// Navbar Component
-const Navbar = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [newsCount, setNewsCount] = useState("247");
-  const [scrolled, setScrolled] = useState(false);
+import React, { useState, useEffect, useRef } from 'react'
+import { ArrowRight, Twitter, Globe, User, ChevronLeft, ChevronRight, Menu, Users, Newspaper, UserCheck, Activity, Home, Gamepad2, Mic, BookOpen, Info } from 'lucide-react'
+import { motion } from 'framer-motion'
+import Navbar from '../landing/Navbar'
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setNewsCount(prev => {
-        const num = parseInt(prev.replace(',', ''));
-        return (num + Math.floor(Math.random() * 3)).toString();
-      });
-    }, 12000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
-  const navItems = [
-    { name: "Home", icon: <Home size={16} />, href: "/" },
-    { name: "News", icon: <Newspaper size={16} />, href: "/news" },
-    { name: "Entertainment", icon: <Gamepad2 size={16} />, href: "/entertainment" },
-    { name: "Orange mic", icon: <Mic size={16} />, href: "https://orange-mic.vercel.app", special: true },
-    { name: "Article/Education", icon: <BookOpen size={16} />, href: "/article" },
-    { name: "About", icon: <Info size={16} />, href: "/about" },
-    { name: "Core Team", icon: <Users size={16} />, href: "/core-team" }
-  ];
-
-  const handleNavigation = (href) => {
-    window.location.href = href;
-  };
-
-  return (
-    <>
-      <div style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 1000,
-        backdropFilter: "blur(20px)",
-        background: scrolled ? "rgba(0, 0, 0, 0.95)" : "rgba(0, 0, 0, 0.7)",
-        borderBottom: scrolled ? "1px solid rgba(114, 47, 55, 0.4)" : "1px solid rgba(114, 47, 55, 0.2)",
-        boxShadow: scrolled ? "0 4px 24px rgba(114, 47, 55, 0.1)" : "none",
-        transition: "all 0.3s ease"
-      }}>
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          maxWidth: "1400px",
-          margin: "0 auto",
-          width: "100%",
-          padding: "16px 24px",
-        }}>
-          {/* Logo Section */}
-          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <img
-              src="/NLogo.jpeg"
-              alt="SIGN-NEWS Logo"
-              style={{
-                width: "48px",
-                height: "48px",
-                borderRadius: "12px",
-                objectFit: "cover",
-                boxShadow: "0 8px 32px rgba(114, 47, 55, 0.25)",
-                border: "2px solid rgba(114, 47, 55, 0.3)",
-              }}
-            />
-            <div>
-              <h1 style={{
-                margin: 0,
-                fontSize: "24px",
-                fontWeight: "bold",
-                fontFamily: "'Roboto Slab', Georgia, serif",
-              }}>
-                <span style={{ color: "white" }}>SIGN</span>
-                <span style={{ color: "#FF8C42" }}>-NEWS</span>
-              </h1>
-              <p style={{
-                fontSize: "12px",
-                color: "#FF8C42",
-                fontWeight: "500",
-                margin: 0,
-              }}>
-                News Platform
-              </p>
-            </div>
-            <span style={{
-              background: "rgba(255, 140, 66, 0.2)",
-              color: "#FF8C42",
-              border: "1px solid rgba(255, 140, 66, 0.3)",
-              fontSize: "11px",
-              fontWeight: "600",
-              padding: "4px 8px",
-              borderRadius: "12px"
-            }}>
-              Live
-            </span>
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "32px" }}>
-            {/* Stats Section - Only on Desktop */}
-            <div style={{ 
-              display: window.innerWidth >= 768 ? "flex" : "none", 
-              gap: "24px", 
-              alignItems: "center" 
-            }}>
-              <div style={{ textAlign: "center" }}>
-                <p style={{ color: "#888", fontSize: "12px", margin: 0 }}>Articles</p>
-                <p style={{ color: "#FF8C42", fontWeight: "600", fontSize: "14px", margin: 0 }}>
-                  {newsCount}
-                </p>
-              </div>
-              <div style={{ position: "relative" }}>
-                <Newspaper size={20} color="#FF8C42" />
-                <Activity size={12} style={{
-                  position: "absolute",
-                  top: "-4px",
-                  right: "-4px",
-                  backgroundColor: "#FF8C42",
-                  borderRadius: "50%",
-                  color: "#FFFFFF",
-                  padding: "2px"
-                }} />
-              </div>
-            </div>
-
-            {/* Join Us Button */}
-            <button
-              style={{
-                background: "linear-gradient(135deg, #722F37 0%, #4B1C22 50%, #2D0F12 100%)",
-                border: "1px solid #722F37",
-                color: "#FFFFFF",
-                padding: "12px 24px",
-                borderRadius: "12px",
-                fontSize: "16px",
-                fontWeight: "700",
-                cursor: "pointer",
-                boxShadow: "0 8px 32px rgba(114, 47, 55, 0.25)",
-                transition: "all 0.3s ease",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px"
-              }}
-              onClick={() => window.open("https://x.com/0xsign_news", "_blank", "noopener,noreferrer")}
-              onMouseEnter={(e) => {
-                e.target.style.transform = "scale(1.05) translateY(-2px)";
-                e.target.style.background = "linear-gradient(135deg, #722F37 0%, #8B3A42 100%)";
-                e.target.style.boxShadow = "0 0 20px rgba(114, 47, 55, 0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.transform = "scale(1) translateY(0px)";
-                e.target.style.background = "linear-gradient(135deg, #722F37 0%, #4B1C22 50%, #2D0F12 100%)";
-                e.target.style.boxShadow = "0 8px 32px rgba(114, 47, 55, 0.25)";
-              }}
-            >
-              <UserCheck size={18} />
-              Join Us
-            </button>
-
-            {/* Hamburger Menu */}
-            <button
-              onClick={handleDrawerToggle}
-              style={{
-                color: "#FF8C42",
-                border: "1px solid rgba(255, 140, 66, 0.3)",
-                borderRadius: "8px",
-                background: "transparent",
-                padding: "8px",
-                cursor: "pointer",
-                transition: "all 0.3s ease"
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.background = "rgba(255, 140, 66, 0.1)";
-                e.target.style.boxShadow = "0 4px 16px rgba(255, 140, 66, 0.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.background = "transparent";
-                e.target.style.boxShadow = "none";
-              }}
-            >
-              <Menu />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Drawer */}
-      {mobileOpen && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "rgba(0, 0, 0, 0.8)",
-            zIndex: 1001,
-            backdropFilter: "blur(10px)"
-          }}
-          onClick={handleDrawerToggle}
-        >
-          <div
-            style={{
-              position: "absolute",
-              right: 0,
-              top: 0,
-              height: "100vh",
-              width: "280px",
-              background: "linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #722F37 100%)",
-              padding: "24px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "16px",
-              borderLeft: "2px solid #722F37",
-              animation: "slideIn 0.3s ease-out"
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h2 style={{
-              color: "#FF8C42",
-              marginBottom: "32px",
-              textAlign: "center",
-              fontWeight: "bold",
-              textShadow: "0 0 10px rgba(255, 140, 66, 0.5)",
-            }}>
-              SIGN-NEWS
-            </h2>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "16px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ color: "#888", fontSize: "14px" }}>News Articles</span>
-                <span style={{ color: "#FF8C42", fontWeight: "600" }}>{newsCount}</span>
-              </div>
-            </div>
-
-            {navItems.map((item, index) => (
-              <button
-                key={item.name}
-                style={{
-                  background: item.special ? "linear-gradient(135deg, #FF8C42 0%, #FF6B1A 100%)" : "rgba(114, 47, 55, 0.1)",
-                  border: item.special ? "1px solid #FF8C42" : "1px solid rgba(114, 47, 55, 0.2)",
-                  color: item.special ? "#FFFFFF" : "#FF8C42",
-                  fontSize: "16px",
-                  cursor: "pointer",
-                  padding: "12px 16px",
-                  textAlign: "left",
-                  borderRadius: "8px",
-                  width: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "12px",
-                  transition: "all 0.3s ease",
-                  marginBottom: "8px"
-                }}
-                onClick={() => {
-                  handleNavigation(item.href);
-                  handleDrawerToggle();
-                }}
-                onMouseEnter={(e) => {
-                  if (item.special) {
-                    e.target.style.background = "linear-gradient(135deg, #FF6B1A 0%, #FF8C42 100%)";
-                    e.target.style.boxShadow = "0 4px 16px rgba(255, 140, 66, 0.3)";
-                  } else {
-                    e.target.style.background = "rgba(114, 47, 55, 0.2)";
-                    e.target.style.border = "1px solid #722F37";
-                    e.target.style.color = "#FFFFFF";
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (item.special) {
-                    e.target.style.background = "linear-gradient(135deg, #FF8C42 0%, #FF6B1A 100%)";
-                    e.target.style.boxShadow = "none";
-                  } else {
-                    e.target.style.background = "rgba(114, 47, 55, 0.1)";
-                    e.target.style.border = "1px solid rgba(114, 47, 55, 0.2)";
-                    e.target.style.color = "#FF8C42";
-                  }
-                }}
-              >
-                {item.icon}
-                {item.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-      
-      <style>{`
-        @keyframes slideIn {
-          from { transform: translateX(100%); }
-          to { transform: translateX(0); }
-        }
-      `}</style>
-    </>
-  );
-};
-
-// Core Team Component
 const CoreTeamPage = () => {
-  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
+  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 })
 
   const teamMembers = [
     {
@@ -360,7 +54,7 @@ const CoreTeamPage = () => {
       position: "Sign news Developer",
       bio: "I'm a full-stack developer with a passion for creating innovative web applications. I love turning ideas into reality through code.",
       image: "DP4.jpg",
-      skills: ["FrontendDeveloper", "Backend Developer", "UIUX Designer"],
+      skills: ["Frontend Developer", "Backend Developer", "UI/UX Designer"],
       twitter: "https://x.com/_BigDe",
     },
     {
@@ -419,7 +113,7 @@ const CoreTeamPage = () => {
       skills: ["Crypto Research", "Content Writing", "Video Editing"],
       twitter: "https://x.com/Aj_cr",
     },
-  ];
+  ]
 
   // Window resize handler
   useEffect(() => {
@@ -427,27 +121,220 @@ const CoreTeamPage = () => {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight
-      });
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+      })
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   // Responsive values
-  const isMobile = windowSize.width <= 768;
-  const isTablet = windowSize.width > 768 && windowSize.width <= 1024;
-  
+  const isMobile = windowSize.width <= 768
+  const isTablet = windowSize.width > 768 && windowSize.width <= 1024
+    
   const getFontSize = (desktop, tablet, mobile) => {
-    if (isMobile) return mobile;
-    if (isTablet) return tablet;
-    return desktop;
-  };
+    if (isMobile) return mobile
+    if (isTablet) return tablet
+    return desktop
+  }
 
   const getPadding = (desktop, mobile) => {
-    return isMobile ? mobile : desktop;
-  };
+    return isMobile ? mobile : desktop
+  }
+
+  // Team Member Card Component
+  const TeamMemberCard = ({ member, index }) => (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      style={{
+        background: 'rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(255, 140, 66, 0.2)',
+        borderRadius: '20px',
+        overflow: 'hidden',
+        transition: 'all 0.3s ease',
+        cursor: 'pointer',
+        backdropFilter: 'blur(20px)',
+        position: 'relative'
+      }}
+      onMouseEnter={(e) => {
+        if (!isMobile) {
+          e.currentTarget.style.transform = 'translateY(-8px)'
+          e.currentTarget.style.boxShadow = '0 20px 60px rgba(255, 140, 66, 0.2)'
+          e.currentTarget.style.borderColor = 'rgba(255, 140, 66, 0.4)'
+        }
+      }}
+      onMouseLeave={(e) => {
+        if (!isMobile) {
+          e.currentTarget.style.transform = 'translateY(0px)'
+          e.currentTarget.style.boxShadow = 'none'
+          e.currentTarget.style.borderColor = 'rgba(255, 140, 66, 0.2)'
+        }
+      }}
+    >
+      {/* Header with gradient background */}
+      <div style={{
+        background: 'linear-gradient(135deg, #722F37 0%, #000000 100%)',
+        padding: '24px',
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        {/* Subtle pattern overlay */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'radial-gradient(circle at 30% 20%, rgba(255, 140, 66, 0.1) 0%, transparent 50%)',
+          pointerEvents: 'none'
+        }} />
+        
+        <div style={{
+          width: '100px',
+          height: '100px',
+          borderRadius: '50%',
+          margin: '0 auto 16px auto',
+          overflow: 'hidden',
+          border: '3px solid rgba(255, 140, 66, 0.5)',
+          position: 'relative',
+          zIndex: 2
+        }}>
+          <img 
+            src={member.image || "/placeholder.svg"} 
+            alt={member.name} 
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              transition: 'transform 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              if (!isMobile) e.target.style.transform = 'scale(1.1)'
+            }}
+            onMouseLeave={(e) => {
+              if (!isMobile) e.target.style.transform = 'scale(1)'
+            }}
+          />
+        </div>
+        
+        <h3 style={{
+          color: '#FFFFFF',
+          fontSize: getFontSize('20px', '18px', '16px'),
+          marginBottom: '8px',
+          fontWeight: '700',
+          position: 'relative',
+          zIndex: 2
+        }}>
+          {member.name}
+        </h3>
+        
+        <div style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          background: 'rgba(255, 215, 0, 0.2)',
+          padding: '6px 16px',
+          borderRadius: '20px',
+          border: '1px solid rgba(255, 215, 0, 0.3)',
+          position: 'relative',
+          zIndex: 2
+        }}>
+          <span style={{
+            color: '#FFD700',
+            fontSize: getFontSize('14px', '13px', '12px'),
+            fontWeight: '600',
+            textTransform: 'uppercase',
+            letterSpacing: '0.5px'
+          }}>
+            {member.position}
+          </span>
+        </div>
+      </div>
+      
+      {/* Content */}
+      <div style={{ padding: '24px' }}>
+        <p style={{
+          color: '#CCCCCC',
+          fontSize: getFontSize('14px', '13px', '12px'),
+          lineHeight: '1.6',
+          marginBottom: '20px',
+          display: '-webkit-box',
+          WebkitLineClamp: 4,
+          WebkitBoxOrient: 'vertical',
+          overflow: 'hidden'
+        }}>
+          {member.bio}
+        </p>
+        
+        {/* Skills */}
+        <div style={{ 
+          display: 'flex', 
+          flexWrap: 'wrap', 
+          gap: '8px', 
+          marginBottom: '20px' 
+        }}>
+          {member.skills.map((skill, i) => (
+            <span 
+              key={i} 
+              style={{
+                padding: '6px 12px',
+                background: 'rgba(255, 140, 66, 0.15)',
+                borderRadius: '12px',
+                color: '#FF8C42',
+                fontSize: '11px',
+                fontWeight: '600',
+                border: '1px solid rgba(255, 140, 66, 0.3)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px'
+              }}
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+        
+        {/* Twitter Button */}
+        <button
+          onClick={() => window.open(member.twitter, '_blank')}
+          style={{
+            width: '100%',
+            padding: '12px 16px',
+            background: 'linear-gradient(135deg, #FF8C42 0%, #722F37 100%)',
+            border: 'none',
+            borderRadius: '12px',
+            color: '#FFFFFF',
+            cursor: 'pointer',
+            fontSize: '14px',
+            fontWeight: '600',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            transition: 'all 0.3s ease',
+            boxShadow: '0 4px 16px rgba(255, 140, 66, 0.2)'
+          }}
+          onMouseEnter={(e) => {
+            if (!isMobile) {
+              e.target.style.transform = 'translateY(-2px)'
+              e.target.style.boxShadow = '0 8px 24px rgba(255, 140, 66, 0.3)'
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (!isMobile) {
+              e.target.style.transform = 'translateY(0px)'
+              e.target.style.boxShadow = '0 4px 16px rgba(255, 140, 66, 0.2)'
+            }
+          }}
+        >
+          <Twitter size={16} />
+          Follow on Twitter
+        </button>
+      </div>
+    </motion.div>
+  )
 
   // Format: Cards Grid
   const renderCardsFormat = () => (
@@ -460,150 +347,181 @@ const CoreTeamPage = () => {
       padding: getPadding('0 24px', '0 16px')
     }}>
       {teamMembers.map((member, index) => (
-        <div
-          key={index}
-          style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            border: '1px solid rgba(255, 140, 66, 0.2)',
-            borderRadius: '20px',
-            overflow: 'hidden',
-            transition: 'all 0.3s ease',
-            cursor: 'pointer',
-            backdropFilter: 'blur(20px)'
-          }}
-          onMouseEnter={(e) => {
-            if (!isMobile) {
-              e.target.style.transform = 'translateY(-8px)';
-              e.target.style.boxShadow = '0 20px 60px rgba(255, 140, 66, 0.2)';
-            }
-          }}
-          onMouseLeave={(e) => {
-            if (!isMobile) {
-              e.target.style.transform = 'translateY(0px)';
-              e.target.style.boxShadow = 'none';
-            }
-          }}
-        >
-          <div style={{
-            background: 'linear-gradient(135deg, #722F37 0%, #000000 100%)',
-            padding: '24px',
-            textAlign: 'center'
-          }}>
-            <div style={{
-              width: '100px',
-              height: '100px',
-              borderRadius: '50%',
-              margin: '0 auto 16px auto',
-              overflow: 'hidden',
-              border: '3px solid rgba(255, 255, 255, 0.3)'
-            }}>
-              <img src={member.image} alt={member.name} style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover'
-              }} />
-            </div>
-            <h3 style={{
-              color: '#FFFFFF',
-              fontSize: getFontSize('20px', '18px', '16px'),
-              marginBottom: '8px'
-            }}>{member.name}</h3>
-            <p style={{
-              color: '#FFD700',
-              fontSize: getFontSize('14px', '13px', '12px'),
-              margin: 0
-            }}>{member.position}</p>
-          </div>
-          
-          <div style={{ padding: '24px' }}>
-            <p style={{
-              color: '#CCCCCC',
-              fontSize: getFontSize('14px', '13px', '12px'),
-              lineHeight: '1.5',
-              marginBottom: '16px'
-            }}>{member.bio}</p>
-            
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
-              {member.skills.map((skill, i) => (
-                <span key={i} style={{
-                  padding: '4px 12px',
-                  background: 'rgba(255, 140, 66, 0.2)',
-                  borderRadius: '12px',
-                  color: '#FF8C42',
-                  fontSize: '11px'
-                }}>{skill}</span>
-              ))}
-            </div>
-            
-            <button
-              onClick={() => window.open(member.twitter, '_blank')}
-              style={{
-                width: '100%',
-                padding: '12px',
-                background: 'linear-gradient(135deg, #FF8C42 0%, #722F37 100%)',
-                border: 'none',
-                borderRadius: '10px',
-                color: '#FFFFFF',
-                cursor: 'pointer',
-                fontSize: '14px',
-                fontWeight: '600'
-              }}
-            >
-              Follow on Twitter
-            </button>
-          </div>
-        </div>
+        <TeamMemberCard key={index} member={member} index={index} />
       ))}
     </div>
-  );
+  )
 
   return (
-    <>
-      {/* Navbar */}
+    <div style={{ position: "relative", width: "100vw", minHeight: "100vh" }}>
+      {/* Updated Navbar */}
       <Navbar />
       
       <div style={{
         minHeight: '100vh',
-        background: 'linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #000000 100%)',
-        color: '#FFFFFF'
+        background: 'linear-gradient(135deg, #000000 0%, #1A0D1A 25%, #2D1B2E 50%, #1A0D1A 75%, #000000 100%)',
+        color: '#FFFFFF',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
+        {/* Background Effects */}
+        <div style={{ position: "absolute", inset: 0, opacity: isMobile ? 0.08 : 0.15 }}>
+          <div
+            style={{
+              position: "absolute",
+              top: "10%",
+              left: "5%",
+              width: isMobile ? "250px" : "400px",
+              height: isMobile ? "250px" : "400px",
+              background: "radial-gradient(circle, #722F37 0%, transparent 70%)",
+              borderRadius: "50%",
+              filter: "blur(100px)",
+              animation: "float 6s ease-in-out infinite",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              bottom: "20%",
+              right: "10%",
+              width: isMobile ? "200px" : "350px",
+              height: isMobile ? "200px" : "350px",
+              background: "radial-gradient(circle, #FF8C42 0%, transparent 70%)",
+              borderRadius: "50%",
+              filter: "blur(80px)",
+              animation: "float 8s ease-in-out infinite reverse",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              right: "5%",
+              width: isMobile ? "150px" : "300px",
+              height: isMobile ? "150px" : "300px",
+              background: "radial-gradient(circle, #FFD700 0%, transparent 70%)",
+              borderRadius: "50%",
+              filter: "blur(120px)",
+              animation: "float 10s ease-in-out infinite",
+            }}
+          />
+        </div>
+
         {/* Header */}
         <div style={{
-          padding: getPadding('120px 24px 60px 24px', '120px 16px 40px 16px'),
+          padding: getPadding('140px 24px 60px 24px', '120px 16px 40px 16px'),
           textAlign: 'center',
           maxWidth: '1200px',
-          margin: '0 auto'
+          margin: '0 auto',
+          position: 'relative',
+          zIndex: 10
         }}>
-          <h1 style={{
-            fontSize: getFontSize('64px', '48px', '36px'),
-            fontWeight: 'bold',
-            marginBottom: '24px',
-            background: 'linear-gradient(135deg, #FF8C42 0%, #FFD700 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}>
-            Meet Our Core Team
-          </h1>
-          
-          <p style={{
-            fontSize: getFontSize('20px', '18px', '16px'),
-            color: '#CCCCCC',
-            marginBottom: '60px',
-            maxWidth: '700px',
-            margin: '0 auto 60px auto'
-          }}>
-            Meet the talented individuals behind our success
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: -40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Badge */}
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '12px',
+              background: 'rgba(255, 140, 66, 0.2)',
+              padding: '8px 24px',
+              borderRadius: '25px',
+              marginBottom: '32px',
+              border: '1px solid rgba(255, 140, 66, 0.3)'
+            }}>
+              <Users size={20} style={{ color: '#FF8C42' }} />
+              <span style={{
+                color: '#FF8C42',
+                fontSize: getFontSize('14px', '13px', '12px'),
+                fontWeight: '700',
+                textTransform: 'uppercase',
+                letterSpacing: '1px'
+              }}>
+                Our Team
+              </span>
+            </div>
+
+            <h1 style={{
+              fontSize: getFontSize('64px', '48px', '36px'),
+              fontWeight: '900',
+              marginBottom: '24px',
+              background: 'linear-gradient(135deg, #FFFFFF 0%, #FF8C42 50%, #FFD700 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              lineHeight: '1.1',
+              letterSpacing: '-2px'
+            }}>
+              Meet Our Core Team
+            </h1>
+            
+            <p style={{
+              fontSize: getFontSize('20px', '18px', '16px'),
+              color: '#CCCCCC',
+              marginBottom: '60px',
+              maxWidth: '700px',
+              margin: '0 auto 60px auto',
+              lineHeight: '1.7'
+            }}>
+              Meet the talented individuals behind our success. Our diverse team of experts brings together 
+              years of experience in journalism, technology, and community building.
+            </p>
+          </motion.div>
         </div>
 
         {/* Content */}
-        <div style={{ paddingBottom: '80px' }}>
+        <div style={{ 
+          paddingBottom: '80px',
+          position: 'relative',
+          zIndex: 10
+        }}>
           {renderCardsFormat()}
         </div>
-      </div>
-    </>
-  );
-};
 
-export default CoreTeamPage;
+        <style jsx>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+          }
+          
+          /* Enhanced mobile interactions */
+          @media (max-width: 768px) {
+            button:active {
+              transform: scale(0.95) !important;
+            }
+          }
+          
+          /* Prevent horizontal scroll */
+          body {
+            overflow-x: hidden;
+          }
+          
+          /* Smooth scrolling */
+          html {
+            scroll-behavior: smooth;
+          }
+          
+          /* Custom scrollbar */
+          ::-webkit-scrollbar {
+            width: 8px;
+          }
+          ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+          }
+          ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #FF8C42 0%, #722F37 100%);
+            border-radius: 4px;
+          }
+          ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #722F37 0%, #FF8C42 100%);
+          }
+        `}</style>
+      </div>
+    </div>
+  )
+}
+
+export default CoreTeamPage

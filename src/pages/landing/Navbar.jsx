@@ -1,5 +1,4 @@
 "use client"
-
 import { useState, useEffect } from "react"
 import {
   AppBar,
@@ -16,19 +15,7 @@ import {
   Chip,
   Badge,
 } from "@mui/material"
-import { 
-  Menu, 
-  Users, 
-  Newspaper,
-  UserCheck,
-  Globe,
-  Activity,
-  Home,
-  Gamepad2,
-  Mic,
-  BookOpen,
-  Info,
-} from "lucide-react"
+import { Menu, Users, Newspaper, UserCheck, Globe, Activity, Home, Gamepad2, Mic, BookOpen, Info } from 'lucide-react'
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion"
 
 // Define constants for reused styles with red/burgundy theme
@@ -66,7 +53,6 @@ const Navbar = () => {
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"))
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"))
-
   const { scrollY } = useScroll()
   const [navbarBackground, setNavbarBackground] = useState("rgba(0, 0, 0, 0.7)")
   const [navbarBorder, setNavbarBorder] = useState("1px solid rgba(114, 47, 55, 0.2)")
@@ -101,6 +87,7 @@ const Navbar = () => {
     { name: "News", icon: <Newspaper size={16} />, href: "/news" },
     { name: "Entertainment", icon: <Gamepad2 size={16} />, href: "/entertainment" },
     { name: "Orange mic", icon: <Mic size={16} />, href: "https://orange-mic.vercel.app", special: true },
+    { name: "Article/Education", icon: <BookOpen size={16} />, href: "/article" },
     { name: "About", icon: <Info size={16} />, href: "/about" },
     { name: "Core Team", icon: <Users size={16} />, href: "/core-team" }
   ]
@@ -242,9 +229,9 @@ const Navbar = () => {
 
   return (
     <motion.div
-      animate={{ 
-        background: navbarBackground, 
-        borderBottom: navbarBorder,
+      animate={{
+         background: navbarBackground,
+         borderBottom: navbarBorder,
         boxShadow: scrollY.get() > 50 ? "0 4px 24px rgba(114, 47, 55, 0.1)" : "none"
       }}
       transition={{ duration: 0.3 }}
@@ -388,11 +375,12 @@ const Navbar = () => {
               aria-label="Open navigation menu"
               edge="end"
               onClick={handleDrawerToggle}
-              sx={{ 
-                color: "#FF8C42",
+              sx={{
+                 color: "#FF8C42",
                 border: "1px solid rgba(255, 140, 66, 0.3)",
                 borderRadius: isMobile ? "6px" : "8px",
                 padding: isMobile ? "6px" : "8px",
+                marginRight: isMobile ? "8px" : "0px", // Add right margin for mobile
                 "&:hover": {
                   background: "rgba(255, 140, 66, 0.1)",
                   boxShadow: "0 4px 16px rgba(255, 140, 66, 0.2)",
@@ -431,4 +419,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default Navbar
