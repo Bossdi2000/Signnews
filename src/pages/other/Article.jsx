@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Clock, Camera, ArrowRight, Heart, Play, ImageIcon, FileText, X, Volume2, VolumeX } from "lucide-react"
 import Navbar from "../landing/Navbar";
-const News = () => {
+const Article = () => {
   const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 })
   const [openModal, setOpenModal] = useState(false)
   const [selectedNews, setSelectedNews] = useState(null)
@@ -1239,7 +1239,7 @@ const News = () => {
                 lineHeight: "1.2",
               }}
             >
-              SIGN <span style={{ color: "#FF8C42" }}>NEWS</span>
+              Articles <span style={{ color: "#FF8C42" }}>Updates</span>
             </h1>
             <p
               style={{
@@ -1278,7 +1278,7 @@ const News = () => {
                   margin: 0,
                 }}
               >
-                Latest News
+                Latest Articles
               </h2>
             </div>
             <div
@@ -1318,7 +1318,7 @@ const News = () => {
                   margin: 0,
                 }}
               >
-                Past News
+                Past Articles
               </h2>
             </div>
             <div
@@ -1509,4 +1509,4 @@ const News = () => {
   )
 }
 
-export default News
+export default Article

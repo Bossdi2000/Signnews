@@ -1,278 +1,498 @@
-"use client"
-import { useState } from "react"
-import { Box, Container, Typography, TextField, Button, Grid, Paper, Snackbar, Alert } from "@mui/material"
-import { motion } from "framer-motion"
-import EmailIcon from "@mui/icons-material/Email"
-import NotificationsIcon from "@mui/icons-material/Notifications"
+import React, { useState, useEffect } from 'react';
+import { Mail, CheckCircle, ArrowRight, Bell, Zap, Globe } from 'lucide-react';
 
 const Newsletter = () => {
-  const [email, setEmail] = useState("")
-  const [openSnackbar, setOpenSnackbar] = useState(false)
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (email) {
-      setOpenSnackbar(true)
-      setEmail("")
-    }
+  // Window resize handler
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const benefits = [
+    { icon: <Bell size={20} />, text: "Breaking news alerts" },
+    { icon: <Zap size={20} />, text: "Daily news digest" },
+    { icon: <Globe size={20} />, text: "Exclusive insights" }
+  ];
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    setIsLoading(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsSubscribed(true);
+      setEmail('');
+    }, 2000);
+  };
+
+  // Responsive values
+  const isMobile = windowSize.width <= 768;
+  const isTablet = windowSize.width > 768 && windowSize.width <= 1024;
+  
+  const getFontSize = (desktop, tablet, mobile) => {
+    if (isMobile) return mobile;
+    if (isTablet) return tablet;
+    return desktop;
+  };
+
+  const getPadding = (desktop, mobile) => {
+    return isMobile ? mobile : desktop;
+  };
+
+  if (isSubscribed) {
+    return (
+      <div style={{
+        padding: getPadding('80px 24px', '60px 16px'),
+        background: 'linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #000000 100%)',
+        position: 'relative',
+        overflow: 'hidden',
+        minHeight: '70vh',
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        {/* Background Effects */}
+        <div style={{ position: 'absolute', inset: 0, opacity: isMobile ? 0.05 : 0.1 }}>
+          <div style={{
+            position: 'absolute',
+            top: '20%',
+            right: '10%',
+            width: isMobile ? '150px' : '200px',
+            height: isMobile ? '150px' : '200px',
+            background: '#FF8C42',
+            borderRadius: '50%',
+            filter: 'blur(60px)'
+          }}></div>
+        </div>
+
+        <div
+          style={{
+            maxWidth: '600px',
+            margin: '0 auto',
+            textAlign: 'center',
+            position: 'relative',
+            zIndex: 10,
+            animation: 'fadeInScale 0.6s ease-out',
+            padding: isMobile ? '0 16px' : '0'
+          }}
+        >
+          <div style={{
+            width: isMobile ? '60px' : '80px',
+            height: isMobile ? '60px' : '80px',
+            background: 'linear-gradient(135deg, #FF8C42 0%, #722F37 100%)',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto 24px auto',
+            boxShadow: '0 0 40px rgba(255, 140, 66, 0.4)'
+          }}>
+            <CheckCircle size={isMobile ? 30 : 40} style={{ color: '#FFFFFF' }} />
+          </div>
+          
+          <h2 style={{
+            fontSize: getFontSize('32px', '28px', '24px'),
+            fontWeight: 'bold',
+            color: '#FFFFFF',
+            marginBottom: '16px'
+          }}>
+            Welcome to SIGN-NEWS!
+          </h2>
+          
+          <p style={{
+            fontSize: getFontSize('18px', '16px', '14px'),
+            color: '#CCCCCC',
+            marginBottom: '32px',
+            lineHeight: '1.6'
+          }}>
+            You've successfully subscribed to our newsletter. Get ready for the latest news and exclusive content delivered straight to your inbox.
+          </p>
+
+          <button
+            onClick={() => setIsSubscribed(false)}
+            style={{
+              padding: getPadding('12px 24px', '10px 20px'),
+              background: 'rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              color: '#FFFFFF',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontSize: getFontSize('16px', '15px', '14px'),
+              fontWeight: '500',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              if (!isMobile) {
+                e.target.style.transform = 'scale(1.05)';
+                e.target.style.background = 'rgba(255, 255, 255, 0.15)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!isMobile) {
+                e.target.style.transform = 'scale(1)';
+                e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+              }
+            }}
+          >
+            Subscribe Another Email
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <Box
-      sx={{
-        py: 8,
-        background: "linear-gradient(135deg, #722F37 0%, #000000 100%)",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      <Container maxWidth="lg">
-        <Grid
-          container
-          spacing={6}
-          alignItems="center"
-          justifyContent="center" // Center the grid
-          sx={{ maxWidth: "1000px", mx: "auto" }} // Limit grid width for centering
-        >
-          <Grid item xs={12} md={5}> {/* Adjusted width for centering */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                <NotificationsIcon sx={{ fontSize: 36, color: "#FFD700", mr: 1.5 }} />
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: "white",
-                    fontWeight: "bold",
-                    fontSize: { xs: "1.5rem", md: "2rem" },
-                    fontFamily: "'Roboto Slab', Georgia, serif",
+    <div style={{
+      padding: getPadding('80px 24px', '60px 16px'),
+      background: 'linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #000000 100%)',
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      {/* Background Effects */}
+      <div style={{ position: 'absolute', inset: 0, opacity: isMobile ? 0.05 : 0.1 }}>
+        <div style={{
+          position: 'absolute',
+          top: '20%',
+          left: '10%',
+          width: isMobile ? '200px' : '300px',
+          height: isMobile ? '200px' : '300px',
+          background: '#722F37',
+          borderRadius: '50%',
+          filter: 'blur(80px)'
+        }}></div>
+        <div style={{
+          position: 'absolute',
+          bottom: '20%',
+          right: '10%',
+          width: isMobile ? '150px' : '250px',
+          height: isMobile ? '150px' : '250px',
+          background: '#FF8C42',
+          borderRadius: '50%',
+          filter: 'blur(60px)'
+        }}></div>
+      </div>
+
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        position: 'relative',
+        zIndex: 10
+      }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+          gap: getPadding('64px', '40px'),
+          alignItems: 'center'
+        }}>
+          
+          {/* Left Content */}
+          <div style={{
+            animation: 'slideInLeft 0.8s ease-out',
+            order: isMobile ? 2 : 1
+          }}>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: 'rgba(255, 140, 66, 0.1)',
+              border: '1px solid rgba(255, 140, 66, 0.2)',
+              borderRadius: '20px',
+              padding: getPadding('6px 12px', '4px 10px'),
+              marginBottom: '24px'
+            }}>
+              <Mail size={isMobile ? 14 : 16} style={{ color: '#FF8C42' }} />
+              <span style={{ 
+                color: '#FF8C42', 
+                fontSize: getFontSize('14px', '13px', '12px'), 
+                fontWeight: '500' 
+              }}>
+                Stay Updated
+              </span>
+            </div>
+
+            <h2 style={{
+              fontSize: getFontSize('48px', '36px', '28px'),
+              fontWeight: 'bold',
+              color: '#FFFFFF',
+              marginBottom: '16px',
+              lineHeight: '1.2'
+            }}>
+              Never Miss a 
+              <span style={{ color: '#FF8C42' }}> Breaking Story</span>
+            </h2>
+
+            <p style={{
+              fontSize: getFontSize('18px', '16px', '14px'),
+              color: '#CCCCCC',
+              marginBottom: '32px',
+              lineHeight: '1.6'
+            }}>
+              Join thousands of readers who trust SIGN-NEWS for timely, accurate, and unbiased reporting. 
+              Get the stories that matter delivered directly to your inbox.
+            </p>
+
+            {/* Benefits */}
+            <div style={{ 
+              display: 'flex', 
+              flexDirection: 'column', 
+              gap: getPadding('16px', '12px')
+            }}>
+              {benefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    animation: `slideInLeft 0.6s ease-out ${0.2 + index * 0.1}s both`
                   }}
                 >
-                  Stay Updated
-                </Typography>
-              </Box>
-              <Typography
-                variant="subtitle1"
-                sx={{
-                  color: "rgba(255,255,255,0.8)",
-                  mb: 3,
-                  lineHeight: 1.6,
-                  fontSize: { xs: "0.9rem", md: "1rem" },
-                  fontFamily: "'Open Sans', Helvetica, sans-serif",
-                }}
-              >
-                Subscribe to our newsletter and never miss breaking news, exclusive interviews, and in-depth analysis
-                delivered straight to your inbox.
-              </Typography>
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Box
-                    sx={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      backgroundColor: "#FFD700",
-                      mr: 1.5,
-                    }}
-                  />
-                  <Typography
-                    sx={{
-                      color: "white",
-                      fontSize: { xs: "0.85rem", md: "0.9rem" },
-                      fontFamily: "'Open Sans', Helvetica, sans-serif",
-                    }}
-                  >
-                    Daily news digest
-                  </Typography>
-                </Box>
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Box
-                    sx={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      backgroundColor: "#FFD700",
-                      mr: 1.5,
-                    }}
-                  />
-                  <Typography
-                    sx={{
-                      color: "white",
-                      fontSize: { xs: "0.85rem", md: "0.9rem" },
-                      fontFamily: "'Open Sans', Helvetica, sans-serif",
-                    }}
-                  >
-                    Breaking news alerts
-                  </Typography>
-                </Box>
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Box
-                    sx={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      backgroundColor: "#FFD700",
-                      mr: 1.5,
-                    }}
-                  />
-                  <Typography
-                    sx={{
-                      color: "white",
-                      fontSize: { xs: "0.85rem", md: "0.9rem" },
-                      fontFamily: "'Open Sans', Helvetica, sans-serif",
-                    }}
-                  >
-                    Exclusive content access
-                  </Typography>
-                </Box>
-              </Box>
-            </motion.div>
-          </Grid>
+                  <div style={{
+                    padding: getPadding('8px', '6px'),
+                    background: 'linear-gradient(135deg, #FF8C42 0%, #722F37 100%)',
+                    borderRadius: '8px',
+                    color: '#FFFFFF',
+                    minWidth: isMobile ? '32px' : '36px',
+                    height: isMobile ? '32px' : '36px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    {React.cloneElement(benefit.icon, { size: isMobile ? 16 : 20 })}
+                  </div>
+                  <span style={{
+                    color: '#FFFFFF',
+                    fontSize: getFontSize('16px', '15px', '14px'),
+                    fontWeight: '500'
+                  }}>
+                    {benefit.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <Grid item xs={12} sm={8} md={5}> {/* Adjusted width for centering */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Paper
-                elevation={10}
-                sx={{
-                  p: 4,
-                  borderRadius: "20px",
-                  backgroundColor: "rgba(255,255,255,0.95)",
-                  backdropFilter: "blur(10px)",
-                  mx: "auto", // Center the Paper within the Grid item
-                  maxWidth: "400px", // Limit Paper width for centering
-                }}
-              >
-                <Box sx={{ textAlign: "center", mb: 2 }}>
-                  <EmailIcon sx={{ fontSize: 40, color: "#722F37", mb: 1.5 }} />
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      color: "#722F37",
-                      fontWeight: "bold",
-                      mb: 1,
-                      fontSize: { xs: "1.2rem", md: "1.5rem" },
-                      fontFamily: "'Roboto Slab', Georgia, serif",
-                    }}
-                  >
-                    Newsletter
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "#666",
-                      fontSize: { xs: "0.85rem", md: "0.9rem" },
-                      fontFamily: "'Open Sans', Helvetica, sans-serif",
-                    }}
-                  >
-                    Join thousands of readers worldwide
-                  </Typography>
-                </Box>
+          {/* Right Content - Form */}
+          <div
+            style={{
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '24px',
+              padding: getPadding('48px', '24px'),
+              backdropFilter: 'blur(20px)',
+              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+              animation: 'slideInRight 0.8s ease-out 0.2s both',
+              order: isMobile ? 1 : 2
+            }}
+          >
+            <div style={{
+              textAlign: 'center',
+              marginBottom: '32px'
+            }}>
+              <h3 style={{
+                fontSize: getFontSize('28px', '24px', '20px'),
+                fontWeight: 'bold',
+                color: '#FFFFFF',
+                marginBottom: '8px'
+              }}>
+                Subscribe Now
+              </h3>
+              <p style={{
+                color: '#CCCCCC',
+                fontSize: getFontSize('16px', '15px', '14px')
+              }}>
+                Free • No spam • Unsubscribe anytime
+              </p>
+            </div>
 
-                <form onSubmit={handleSubmit}>
-                  <TextField
-                    fullWidth
-                    type="email"
-                    label="Enter your email address"
-                    variant="outlined"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    sx={{
-                      mb: 2,
-                      "& .MuiOutlinedInput-root": {
-                        borderRadius: "10px",
-                        "&.Mui-focused fieldset": {
-                          borderColor: "#722F37",
-                        },
-                        "& input": {
-                          fontSize: "0.9rem",
-                          fontFamily: "'Open Sans', Helvetica, sans-serif",
-                          textAlign: "center", // Center input text
-                        },
-                      },
-                      "& .MuiInputLabel-root": {
-                        fontSize: "0.9rem",
-                        fontFamily: "'Open Sans', Helvetica, sans-serif",
-                        textAlign: "center",
-                      },
-                      "& .MuiInputLabel-root.Mui-focused": {
-                        color: "#722F37",
-                        fontSize: "0.9rem",
-                      },
-                    }}
-                  />
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    fullWidth
-                    size="large"
-                    sx={{
-                      backgroundColor: "#722F37",
-                      color: "white",
-                      py: 1.5,
-                      borderRadius: "10px",
-                      fontSize: "0.9rem",
-                      fontWeight: "bold",
-                      fontFamily: "'Open Sans', Helvetica, sans-serif",
-                      "&:hover": {
-                        backgroundColor: "#5A252A",
-                        transform: "translateY(-2px)",
-                      },
-                      transition: "all 0.3s ease",
-                    }}
-                  >
-                    Subscribe Now
-                  </Button>
-                </form>
-
-                <Typography
-                  variant="caption"
-                  sx={{
-                    display: "block",
-                    textAlign: "center",
-                    mt: 2,
-                    color: "#666",
-                    fontSize: "0.75rem",
-                    fontFamily: "'Open Sans', Helvetica, sans-serif",
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div style={{ position: 'relative' }}>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  style={{
+                    width: '100%',
+                    padding: getPadding('16px 20px', '14px 16px'),
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    borderRadius: '12px',
+                    color: '#FFFFFF',
+                    fontSize: getFontSize('16px', '15px', '14px'),
+                    outline: 'none',
+                    transition: 'all 0.3s ease',
+                    boxSizing: 'border-box'
                   }}
-                >
-                  We respect your privacy. Unsubscribe at any time.
-                </Typography>
-              </Paper>
-            </motion.div>
-          </Grid>
-        </Grid>
-      </Container>
+                  onFocus={(e) => {
+                    e.target.style.border = '1px solid #FF8C42';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(255, 140, 66, 0.1)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+                    e.target.style.boxShadow = 'none';
+                  }}
+                />
+              </div>
 
-      <Snackbar
-        open={openSnackbar}
-        autoHideDuration={6000}
-        onClose={() => setOpenSnackbar(false)}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-      >
-        <Alert
-          onClose={() => setOpenSnackbar(false)}
-          severity="success"
-          sx={{
-            width: "100%",
-            fontSize: "0.85rem",
-            fontFamily: "'Open Sans', Helvetica, sans-serif",
-          }}
-        >
-          Successfully subscribed to our newsletter!
-        </Alert>
-      </Snackbar>
-    </Box>
-  )
-}
+              <button
+                onClick={handleSubmit}
+                disabled={isLoading || !email}
+                style={{
+                  width: '100%',
+                  padding: getPadding('16px', '14px'),
+                  background: isLoading ? 'rgba(255, 140, 66, 0.5)' : 'linear-gradient(135deg, #FF8C42 0%, #722F37 100%)',
+                  border: 'none',
+                  borderRadius: '12px',
+                  color: '#FFFFFF',
+                  fontSize: getFontSize('16px', '15px', '14px'),
+                  fontWeight: '600',
+                  cursor: isLoading ? 'not-allowed' : 'pointer',
+                  transition: 'all 0.3s ease',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  boxShadow: '0 8px 32px rgba(255, 140, 66, 0.25)',
+                  minHeight: getPadding('56px', '48px')
+                }}
+                onMouseEnter={(e) => {
+                  if (!isMobile && !isLoading) {
+                    e.target.style.transform = 'scale(1.02)';
+                    e.target.style.boxShadow = '0 12px 40px rgba(255, 140, 66, 0.35)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isMobile && !isLoading) {
+                    e.target.style.transform = 'scale(1)';
+                    e.target.style.boxShadow = '0 8px 32px rgba(255, 140, 66, 0.25)';
+                  }
+                }}
+              >
+                {isLoading ? (
+                  <>
+                    <div style={{
+                      width: isMobile ? '16px' : '20px',
+                      height: isMobile ? '16px' : '20px',
+                      border: '2px solid rgba(255, 255, 255, 0.3)',
+                      borderTop: '2px solid #FFFFFF',
+                      borderRadius: '50%',
+                      animation: 'spin 1s linear infinite'
+                    }}></div>
+                    {isMobile ? 'Subscribing...' : 'Subscribing...'}
+                  </>
+                ) : (
+                  <>
+                    {isMobile ? 'Subscribe' : 'Subscribe to Newsletter'}
+                    <ArrowRight size={18} />
+                  </>
+                )}
+              </button>
+            </div>
 
-export default Newsletter
+            <p style={{
+              textAlign: 'center',
+              color: '#AAAAAA',
+              fontSize: getFontSize('14px', '13px', '12px'),
+              marginTop: '20px',
+              lineHeight: '1.5'
+            }}>
+              By subscribing, you agree to receive our newsletter and accept our{' '}
+              <span style={{ color: '#FF8C42', cursor: 'pointer' }}>Privacy Policy</span>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInScale {
+          from {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        input::placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Touch-friendly interactions for mobile */
+        @media (max-width: 768px) {
+          button:active {
+            transform: scale(0.95) !important;
+          }
+          
+          input:focus {
+            font-size: 16px; /* Prevents zoom on iOS */
+          }
+        }
+
+        /* Prevent horizontal scroll on very small screens */
+        @media (max-width: 320px) {
+          .newsletter-container {
+            padding: 40px 12px !important;
+          }
+          
+          .form-container {
+            padding: 20px 16px !important;
+          }
+        }
+
+        /* Better spacing for tablets */
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .benefits-container {
+            gap: 14px !important;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default Newsletter;

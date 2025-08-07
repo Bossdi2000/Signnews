@@ -9,6 +9,9 @@ import AboutUsPage from './pages/other/AboutUsPage';
 import CoreTeamPage from './pages/other/CoreTeamPage';
 import News from './pages/other/News';
 import AdminRoutes from './pages/admin/AdminRoutes';
+import NewsBrief from './pages/landing/NewsBrief';
+import Entertainment from './pages/other/Entertainment';
+import Article from './pages/other/Article'; // Assuming this is the correct import for the Article component
 import UserRoutes from './pages/user/UserRoutes';
 import Sample from './pages/other/Sample';
 import NotFound from './pages/other/NotFound';
@@ -43,6 +46,9 @@ const App = () => {
           {/* Admin routes */}
           <Route path="/admin/*" element={<AdminRoutes />} />
           {/* Route all components that are neither admin or user here as needed */}
+          <Route path="/news-brief" element={<NewsBrief />} />
+          <Route path="/entertainment" element={<Entertainment />} />
+          <Route path="/article" element={<Article />} />
           <Route path="/sample" element={<Sample />} />
           {/* Fallback route for 404 Not Found */}
           <Route path="*" element={<NotFound />} />
