@@ -15,6 +15,7 @@ import {
   useMediaQuery,
   useTheme,
   Avatar,
+  Badge,
 } from '@mui/material';
 import {
   Menu as MenuIcon,
@@ -26,6 +27,7 @@ import {
   Notifications as NotificationsIcon,
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
+import NotificationPanel from './NotificationPanel';
 
 const drawerWidth = 280;
 
@@ -34,6 +36,13 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate();
   const location = useLocation();
+  const [notificationOpen, setNotificationOpen] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem('adminLoggedIn');
+    localStorage.removeItem('adminUser');
+    navigate('/admin-login');
+  };
 
   const menuItems = [
     { 
@@ -347,6 +356,7 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
       >
         <Box sx={{ display: 'flex', gap: 1 }}>
           <IconButton
+            onClick={() => setNotificationOpen(true)}
             sx={{
               flex: 1,
               color: '#CCCCCC',
@@ -363,9 +373,12 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
               },
             }}
           >
-            <NotificationsIcon sx={{ fontSize: { xs: '16px', sm: '18px', md: '20px' } }} />
+            <Badge badgeContent={3} color="error">
+              <NotificationsIcon sx={{ fontSize: { xs: '16px', sm: '18px', md: '20px' } }} />
+            </Badge>
           </IconButton>
           <IconButton
+            onClick={handleLogout}
             sx={{
               flex: 1,
               color: '#CCCCCC',
@@ -391,6 +404,12 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
 
   return (
     <>
+      {/* Notification Panel */}
+      <NotificationPanel 
+        open={notificationOpen} 
+        onClose={() => setNotificationOpen(false)} 
+      />
+      
       {/* Top App Bar */}
       <AppBar
         position="fixed"

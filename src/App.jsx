@@ -9,12 +9,16 @@ import AboutUsPage from './pages/other/AboutUsPage';
 import CoreTeamPage from './pages/other/CoreTeamPage';
 import News from './pages/other/News';
 import AdminRoutes from './pages/admin/AdminRoutes';
+import AdminLogin from './pages/admin/AdminLogin';
+import SuperAdmin from './pages/admin/SuperAdmin';
 import NewsBrief from './pages/landing/NewsBrief';
 import Entertainment from './pages/other/Entertainment';
 import Article from './pages/other/Article'; // Assuming this is the correct import for the Article component
 import UserRoutes from './pages/user/UserRoutes';
 import Sample from './pages/other/Sample';
 import NotFound from './pages/other/NotFound';
+
+
 
 const theme = createTheme({
   palette: {
@@ -31,6 +35,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+
       <Router>
         <Routes>
           {/* Landing page route */}
@@ -43,6 +48,10 @@ const App = () => {
           <Route path="/news" element={<News />} />
           {/* User routes */}
           <Route path="/user/*" element={<UserRoutes />} />
+          {/* Admin login route */}
+          <Route path="/admin-login" element={<AdminLogin />} />
+          {/* Super Admin route - only accessible directly */}
+          <Route path="/super-admin" element={<SuperAdmin />} />
           {/* Admin routes */}
           <Route path="/admin/*" element={<AdminRoutes />} />
           {/* Route all components that are neither admin or user here as needed */}

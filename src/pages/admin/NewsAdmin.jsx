@@ -17,73 +17,15 @@ import {
   Volume2,
   VolumeX
 } from "lucide-react";
+import { newsService } from "../../services/newsService";
 
-// Simple Navbar component (you can replace this with your actual Navbar component)
-const Navbar = () => (
-  <nav style={{
-    position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1000,
-    background: "rgba(0, 0, 0, 0.95)",
-    backdropFilter: "blur(20px)",
-    padding: "12px 20px",
-    borderBottom: "1px solid rgba(255, 255, 255, 0.1)"
-  }}>
-    <div style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      maxWidth: "1400px",
-      margin: "0 auto"
-    }}>
-      <div style={{
-        fontSize: "20px",
-        fontWeight: "bold",
-        color: "#FFFFFF"
-      }}>
-        SIGN <span style={{ color: "#FF8C42" }}>ADMIN</span>
-      </div>
-      <div style={{
-        display: "flex",
-        gap: "20px",
-        alignItems: "center"
-      }}>
-        <span style={{ color: "#CCCCCC", fontSize: "14px" }}>News Management</span>
-      </div>
-    </div>
-  </nav>
-);
+// Remove the custom Navbar since we're using the sidebar layout
 
 const NewsAdmin = () => {
   const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
-  const [newsData, setNewsData] = useState([
-    {
-      id: 1,
-      title: "Episode 6: Back to the Cyber Café",
-      summary: "It had been almost a year since Kelechi last stepped foot into the café. The walls were still yellowed by heat. The fans still made the same tired noise. And the boy in the back corner—the same position Kelechi once sat in—was hunched over, battling with a slow-loading page.",
-      writer: "Sign News Desk",
-      image: "/PT1.jpeg",
-      type: "image",
-      category: "Story",
-      date: "2025-08-01",
-      isPublished: true,
-      fullContent: "Full content here..."
-    },
-    {
-      id: 2,
-      title: "Episode 5: The Ones Who Laughed",
-      summary: "It started slowly—the whispers. 'Is that not Kelechi? The one that used to iron one trouser like it was Gucci?' 'I heard Madam Fola uses him now.' The same boys who once joked about his cyber café hustle now stood at his shop window, pretending not to look in.",
-      writer: "Sign News Desk",
-      image: "/PT2.jpeg",
-      type: "image",
-      category: "Story",
-      date: "2025-07-31",
-      isPublished: true,
-      fullContent: "Full content here..."
-    }
-  ]);
+  const [newsData, setNewsData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const [filteredNews, setFilteredNews] = useState(newsData);
   const [searchTerm, setSearchTerm] = useState("");
@@ -112,6 +54,14 @@ const NewsAdmin = () => {
   const [mutedVideos, setMutedVideos] = useState({});
   const videoRefs = useRef({});
 
+  // File upload states
+  const imageInputRef = useRef(null);
+  const videoInputRef = useRef(null);
+  const [imageFile, setImageFile] = useState(null);
+  const [videoFile, setVideoFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState('');
+  const [videoPreview, setVideoPreview] = useState('');
+
   // Responsive breakpoints
   const BREAKPOINTS = {
     mobile: 768,
@@ -122,6 +72,27 @@ const NewsAdmin = () => {
 
   const isMobile = windowSize.width <= BREAKPOINTS.mobile;
   const isTablet = windowSize.width > BREAKPOINTS.mobile && windowSize.width <= BREAKPOINTS.tablet;
+
+  // Fetch news data from API
+  useEffect(() => {
+    fetchNews();
+  }, []);
+
+  // Fetch news data
+  const fetchNews = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const response = await newsService.getNews();
+      setNewsData(response.data || []);
+      setFilteredNews(response.data || []);
+    } catch (err) {
+      console.error('Error fetching news:', err);
+      setError('Failed to load news data');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Window resize handler
   useEffect(() => {
@@ -233,6 +204,11 @@ const NewsAdmin = () => {
       isPublished: true,
       fullContent: ""
     });
+    // Reset file upload states
+    setImageFile(null);
+    setVideoFile(null);
+    setImagePreview('');
+    setVideoPreview('');
     setShowModal(true);
   };
 
@@ -241,16 +217,25 @@ const NewsAdmin = () => {
     setSelectedNews(news);
     setFormData({
       title: news.title,
-      summary: news.summary,
-      writer: news.writer,
+      summary: news.description || news.summary,
+      writer: news.author?.fullName || news.writer,
       image: news.image || "",
       videoUrl: news.videoUrl || "",
       type: news.type,
       category: news.category,
-      date: news.date,
-      isPublished: news.isPublished,
-      fullContent: news.fullContent || ""
+      date: news.publishedAt ? new Date(news.publishedAt).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
+      isPublished: news.status === 'published',
+      fullContent: news.content || news.fullContent || "",
+      tags: news.tags ? news.tags.join(', ') : "",
+      featured: news.featured || false,
+      breaking: news.breaking || false,
+      location: news.location || ""
     });
+    // Set preview images/videos for existing content
+    setImagePreview(news.image || '');
+    setVideoPreview(news.videoUrl || '');
+    setImageFile(null);
+    setVideoFile(null);
     setShowModal(true);
   };
 
@@ -260,39 +245,81 @@ const NewsAdmin = () => {
     setShowModal(true);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this news item?")) {
-      setNewsData(prev => prev.filter(item => item.id !== id));
+      try {
+        await newsService.deleteNews(id);
+        await fetchNews(); // Refresh the list
+      } catch (error) {
+        console.error('Error deleting news:', error);
+        alert('Failed to delete news. Please try again.');
+      }
     }
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!formData.title.trim() || !formData.summary.trim()) {
       alert("Title and summary are required!");
       return;
     }
 
-    if (modalMode === "create") {
-      const newId = Math.max(...newsData.map(item => item.id), 0) + 1;
-      const newNews = {
-        ...formData,
-        id: newId,
+    try {
+      const newsDataToSend = {
+        title: formData.title,
+        description: formData.summary,
+        content: formData.fullContent,
+        type: formData.type,
+        category: formData.category,
+        status: formData.isPublished ? 'published' : 'draft',
+        image: imageFile,
+        videoUrl: formData.videoUrl,
+        tags: formData.tags ? formData.tags.split(',').map(tag => tag.trim()) : [],
+        featured: formData.featured || false,
+        breaking: formData.breaking || false,
+        language: 'en',
+        location: formData.location || null
       };
-      setNewsData(prev => [newNews, ...prev]);
-    } else if (modalMode === "edit") {
-      setNewsData(prev => prev.map(item => 
-        item.id === selectedNews.id ? { ...formData, id: selectedNews.id } : item
-      ));
-    }
 
-    setShowModal(false);
-    setSelectedNews(null);
+      if (modalMode === "create") {
+        await newsService.createNews(newsDataToSend);
+      } else if (modalMode === "edit") {
+        await newsService.updateNews(selectedNews.id, newsDataToSend);
+      }
+
+      // Refresh the news list
+      await fetchNews();
+      setShowModal(false);
+      setSelectedNews(null);
+      setFormData({
+        title: "",
+        summary: "",
+        writer: "",
+        image: "",
+        videoUrl: "",
+        type: "image",
+        category: "Story",
+        date: new Date().toISOString().split('T')[0],
+        isPublished: true,
+        fullContent: ""
+      });
+      setImageFile(null);
+      setVideoFile(null);
+      setImagePreview('');
+      setVideoPreview('');
+    } catch (error) {
+      console.error('Error saving news:', error);
+      alert('Failed to save news. Please try again.');
+    }
   };
 
-  const togglePublishStatus = (id) => {
-    setNewsData(prev => prev.map(item => 
-      item.id === id ? { ...item, isPublished: !item.isPublished } : item
-    ));
+  const togglePublishStatus = async (id) => {
+    try {
+      await newsService.togglePublishStatus(id);
+      await fetchNews(); // Refresh the list
+    } catch (error) {
+      console.error('Error toggling publish status:', error);
+      alert('Failed to update publish status. Please try again.');
+    }
   };
 
   const toggleVideoMute = (videoId) => {
@@ -307,23 +334,50 @@ const NewsAdmin = () => {
     }
   };
 
+  // File upload handlers
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setImageFile(file);
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setImagePreview(e.target.result);
+      setFormData(prev => ({ ...prev, image: e.target.result }));
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleVideoUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setVideoFile(file);
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setVideoPreview(e.target.result);
+      setFormData(prev => ({ ...prev, videoUrl: e.target.result }));
+    };
+    reader.readAsDataURL(file);
+  };
+
   const categories = ["Story", "Blockchain", "Community", "Business", "Product Updates", "Infrastructure"];
   const types = ["image", "video"];
 
   return (
     <>
-      <Navbar />
-      
-      <div style={{
-        paddingTop: "100px",
-        padding: getPadding("100px 16px 40px 16px", "100px 12px 20px 12px"),
-        background: "linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #000000 100%)",
-        position: "relative",
-        overflow: "hidden",
-        minHeight: "100vh",
-        width: "100vw",
-        boxSizing: "border-box",
-      }}>
+      <div 
+        className="news-admin-container"
+        style={{
+          padding: getPadding("20px 16px 40px 16px", "16px 12px 20px 12px"),
+          background: "linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #000000 100%)",
+          position: "relative",
+          overflow: "hidden",
+          minHeight: "100%",
+          width: "100%",
+          boxSizing: "border-box",
+        }}
+      >
         {/* Background Effects */}
         <div style={{ position: "absolute", inset: 0, opacity: isMobile ? 0.05 : 0.1 }}>
           <div style={{
@@ -349,7 +403,6 @@ const NewsAdmin = () => {
         </div>
 
         <div style={{
-          maxWidth: "1400px",
           width: "100%",
           margin: "0 auto",
           position: "relative",
@@ -641,14 +694,38 @@ const NewsAdmin = () => {
             </div>
           </div>
 
+          {/* Loading and Error States */}
+          {loading && (
+            <div style={{
+              textAlign: "center",
+              padding: "40px",
+              color: "#FFFFFF",
+              fontSize: getFontSize(18, 16, 14, 12)
+            }}>
+              Loading news...
+            </div>
+          )}
+
+          {error && (
+            <div style={{
+              textAlign: "center",
+              padding: "40px",
+              color: "#FF6B6B",
+              fontSize: getFontSize(18, 16, 14, 12)
+            }}>
+              {error}
+            </div>
+          )}
+
           {/* News List */}
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fill, minmax(320px, 1fr))",
-            gap: "20px",
-            marginBottom: "40px"
-          }}>
-            {filteredNews.map((item) => (
+          {!loading && !error && filteredNews.length > 0 && (
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fill, minmax(320px, 1fr))",
+              gap: "20px",
+              marginBottom: "40px"
+            }}>
+              {filteredNews.map((item) => (
               <div
                 key={item.id}
                 style={{
@@ -967,10 +1044,11 @@ const NewsAdmin = () => {
                 </div>
               </div>
             ))}
-          </div>
+            </div>
+          )}
 
           {/* Empty State */}
-          {filteredNews.length === 0 && (
+          {!loading && !error && filteredNews.length === 0 && (
             <div style={{
               textAlign: "center",
               padding: "60px 20px",
@@ -1030,7 +1108,7 @@ const NewsAdmin = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            zIndex: 2000,
+            zIndex: 9999,
             padding: "20px"
           }}>
             <div style={{
@@ -1331,7 +1409,7 @@ const NewsAdmin = () => {
                       </select>
                     </div>
 
-                    {/* Image URL */}
+                    {/* Image Upload */}
                     <div>
                       <label style={{
                         display: "block",
@@ -1340,26 +1418,52 @@ const NewsAdmin = () => {
                         fontWeight: "600",
                         marginBottom: "6px"
                       }}>
-                        Image URL
+                        Image Upload
                       </label>
                       <input
-                        type="url"
-                        value={formData.image}
-                        onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                        ref={imageInputRef}
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        style={{ display: "none" }}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => imageInputRef.current?.click()}
                         style={{
                           width: "100%",
                           padding: "12px",
-                          border: "1px solid #D1D5DB",
+                          border: "2px dashed #D1D5DB",
                           borderRadius: "8px",
                           fontSize: "14px",
-                          outline: "none",
-                          boxSizing: "border-box"
+                          background: "transparent",
+                          cursor: "pointer",
+                          color: "#722F37",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: "8px"
                         }}
-                        placeholder="Enter image URL..."
-                      />
+                      >
+                        📁 Choose Image File
+                      </button>
+                      {imagePreview && (
+                        <div style={{ marginTop: "10px" }}>
+                          <img
+                            src={imagePreview}
+                            alt="Preview"
+                            style={{
+                              width: "100%",
+                              maxHeight: "200px",
+                              objectFit: "cover",
+                              borderRadius: "8px"
+                            }}
+                          />
+                        </div>
+                      )}
                     </div>
 
-                    {/* Video URL (if type is video) */}
+                    {/* Video Upload (if type is video) */}
                     {formData.type === "video" && (
                       <div>
                         <label style={{
@@ -1369,23 +1473,48 @@ const NewsAdmin = () => {
                           fontWeight: "600",
                           marginBottom: "6px"
                         }}>
-                          Video URL
+                          Video Upload
                         </label>
                         <input
-                          type="url"
-                          value={formData.videoUrl}
-                          onChange={(e) => setFormData({ ...formData, videoUrl: e.target.value })}
+                          ref={videoInputRef}
+                          type="file"
+                          accept="video/*"
+                          onChange={handleVideoUpload}
+                          style={{ display: "none" }}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => videoInputRef.current?.click()}
                           style={{
                             width: "100%",
                             padding: "12px",
-                            border: "1px solid #D1D5DB",
+                            border: "2px dashed #D1D5DB",
                             borderRadius: "8px",
                             fontSize: "14px",
-                            outline: "none",
-                            boxSizing: "border-box"
+                            background: "transparent",
+                            cursor: "pointer",
+                            color: "#722F37",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: "8px"
                           }}
-                          placeholder="Enter video URL..."
-                        />
+                        >
+                          🎥 Choose Video File
+                        </button>
+                        {videoPreview && (
+                          <div style={{ marginTop: "10px" }}>
+                            <video
+                              src={videoPreview}
+                              controls
+                              style={{
+                                width: "100%",
+                                maxHeight: "200px",
+                                borderRadius: "8px"
+                              }}
+                            />
+                          </div>
+                        )}
                       </div>
                     )}
 
@@ -1568,6 +1697,15 @@ const NewsAdmin = () => {
           
           div::-webkit-scrollbar-thumb:hover {
             background: #722F37;
+          }
+          
+          /* Ensure proper layout within sidebar */
+          .news-admin-container {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
           }
         `}</style>
       </div>

@@ -1,19 +1,54 @@
 // pages/admin/AdminRoutes.jsx
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { Box, Toolbar, useTheme, useMediaQuery } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { Box, Toolbar, useTheme, useMediaQuery, CircularProgress } from '@mui/material';
 import Sidebar, { drawerWidth } from './Sidebar';
 import AdminDashboard from './AdminDashboard';
 import NewsAdmin from './NewsAdmin';
+import EntertainmentAdmin from './EntertainmentAdmin';
+import ArticleAdmin from './ArticleAdmin';
 
 const AdminRoutes = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  useEffect(() => {
+    // Check if admin is logged in
+    const adminLoggedIn = localStorage.getItem('adminLoggedIn');
+    if (adminLoggedIn === 'true') {
+      setIsAuthenticated(true);
+    }
+    setIsLoading(false);
+  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  // Show loading spinner while checking authentication
+  if (isLoading) {
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '100vh',
+          background: 'linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #000000 100%)',
+        }}
+      >
+        <CircularProgress sx={{ color: '#FF8C42' }} />
+      </Box>
+    );
+  }
+
+  // Redirect to login if not authenticated
+  if (!isAuthenticated) {
+    return <Navigate to="/admin-login" replace />;
+  }
 
   return (
     <Box
@@ -69,6 +104,8 @@ const AdminRoutes = () => {
           <Routes>
             <Route path="/" element={<AdminDashboard />} />
             <Route path="/news" element={<NewsAdmin />} />
+            <Route path="/entertainment" element={<EntertainmentAdmin />} />
+            <Route path="/articles" element={<ArticleAdmin />} />
           </Routes>
         </Box>
       </Box>

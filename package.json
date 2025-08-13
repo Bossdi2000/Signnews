@@ -16,6 +16,7 @@
     "@fontsource/roboto-slab": "^5.2.6",
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
+    "axios": "^1.11.0",
     "framer-motion": "^12.22.0",
     "lucide-react": "^0.536.0",
     "react": "^19.1.0",
